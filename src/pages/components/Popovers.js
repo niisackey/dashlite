@@ -11,7 +11,7 @@ const PopoversPage = ({ ...props }) => {
 
   const toggle = () => setPopoverOpen(!popoverOpen);
   return (
-    <>
+    <React.Fragment>
       <Head title="Popovers" />
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -158,7 +158,7 @@ const PopoversPage = ({ ...props }) => {
           </CodeBlock>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

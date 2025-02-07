@@ -18,7 +18,7 @@ import {
 } from "../../../components/Component";
 import { Badge, Card } from "reactstrap";
 import { ProductContext } from "./ProductContext";
-import { useParams, Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { SlickArrowLeft, SlickArrowRight } from "../../../components/partials/slick/SlickComponents";
 
 const sliderSettings = {
@@ -53,7 +53,7 @@ const sliderSettingsDefault = {
   className: "slider-init slider-nav",
 };
 
-const ProductDetails = () => {
+const ProductDetails = ({ match }) => {
   const { contextData } = useContext(ProductContext);
 
   const [data] = contextData;
@@ -108,8 +108,9 @@ const ProductDetails = () => {
       setCurrentSlide(data[0].slider[0]);
     }
   }, [productId]); // eslint-disable-line react-hooks/exhaustive-deps
+
   return (
-    <>
+    <React.Fragment>
       <Head title="Product Detail"></Head>
       {sliderData && sliderData.slider && (
         <Content>
@@ -535,7 +536,7 @@ const ProductDetails = () => {
           </Block>
         </Content>
       )}
-    </>
+    </React.Fragment>
   );
 };
 

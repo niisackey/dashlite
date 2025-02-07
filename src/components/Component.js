@@ -8,16 +8,16 @@ import UserAvatar from "./user/UserAvatar";
 import UserGroup from "./user/UserGroup";
 import PaginationComponent from "../components/pagination/Pagination";
 import DataTablePagination from "./pagination/DataTablePagination";
-import Sidebar from "./sidebar/Sidebar";
 import ReactDataTable from "./table/ReactDataTable";
+import Sidebar from "./sidebar/Sidebar";
 import RSelect from "./select/ReactSelect";
 import InputSwitch from "./input/switch/Switch";
 import OutlinedInput from "./input/outlined-input/OutlinedInput";
 import Progress from "./progress/Progress";
 import NSComponent from "./number-spinner/NumberSpinner";
 import Knob from "./knob/Knob";
-import ReactDualList from "./dual-list/RDualList";
 import Rating from "./rating/Rating";
+import ReactDualList from "./dual-list/RDualList";
 import {
   Block,
   BlockHead,
@@ -26,6 +26,8 @@ import {
   BlockTitle,
   BlockDes,
   BlockBetween,
+  BlockHeadSub,
+  BlockImage,
   BackTo,
 } from "./block/Block";
 import { LinkList, LinkItem } from "./links/Links";
@@ -57,11 +59,12 @@ export {
   InputSwitch,
   Block,
   BlockContent,
+  BlockHeadSub,
+  BlockImage,
   Rating,
   PaginationComponent,
-  ReactDualList,
-  DataTablePagination,
   NSComponent,
+  DataTablePagination,
   ReactDataTable,
   PreviewCard,
   PreviewTable,
@@ -79,9 +82,9 @@ export {
   Table,
   Row,
   Col,
+  Knob,
   TooltipComponent,
   SpecialTable,
-  Knob,
   LineChartExample,
   BarChartExample,
   PieChartExample,
@@ -104,5 +107,6 @@ export {
   DataTableTitle,
   PreviewAltCard,
   RSelect,
+  ReactDualList,
   Progress,
 };

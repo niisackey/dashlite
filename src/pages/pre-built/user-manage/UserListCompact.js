@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useContext } from "react";
 import Content from "../../../layout/content/Content";
 import Head from "../../../layout/head/Head";
-import { filterRole, filterStatus, userData } from "./UserData";
-import { bulkActionOptions, findUpper } from "../../../utils/Utils";
+import { findUpper } from "../../../utils/Utils";
+import { userData, filterRole, filterStatus } from "./UserData";
 import {
   DropdownMenu,
   DropdownToggle,
   UncontrolledDropdown,
-  DropdownItem
+  DropdownItem,
 } from "reactstrap";
 import {
   Block,
@@ -34,6 +34,7 @@ import { Link } from "react-router-dom";
 import { UserContext } from "./UserContext";
 import EditModal from "./EditModal";
 import AddModal from "./AddModal";
+import { bulkActionOptions } from "../../../utils/Utils";
 
 const UserListCompact = () => {
   const { contextData } = useContext(UserContext);
@@ -127,7 +128,7 @@ const UserListCompact = () => {
     setFormData({
       name: "",
       email: "",
-      balance: 0,
+      balance:0,
       phone: "",
       status: "Active",
     });
@@ -255,572 +256,576 @@ const UserListCompact = () => {
   // Change Page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-  return <>
-    <Head title="User List - Compact"></Head>
-    <Content>
-      <BlockHead size="sm">
-        <BlockBetween>
-          <BlockHeadContent>
-            <BlockTitle tag="h3" page>
-              Users Lists
-            </BlockTitle>
-            <BlockDes className="text-soft">
-              <p>You have total 2,595 users.</p>
-            </BlockDes>
-          </BlockHeadContent>
-          <BlockHeadContent>
-            <div className="toggle-wrap nk-block-tools-toggle">
-              <Button
-                className={`btn-icon btn-trigger toggle-expand me-n1 ${sm ? "active" : ""}`}
-                onClick={() => updateSm(!sm)}
-              >
-                <Icon name="menu-alt-r"></Icon>
-              </Button>
-              <div className="toggle-expand-content" style={{ display: sm ? "block" : "none" }}>
-                <ul className="nk-block-tools g-3">
-                  <li>
-                    <a
-                      href="#export"
-                      onClick={(ev) => {
-                        ev.preventDefault();
-                      }}
-                      className="btn btn-white btn-outline-light"
-                    >
-                      <Icon name="download-cloud"></Icon>
-                      <span>Export</span>
-                    </a>
-                  </li>
-                  <li className="nk-block-tools-opt">
-                    <Button color="primary" className="btn-icon" onClick={() => setModal({ add: true })}>
-                      <Icon name="plus"></Icon>
-                    </Button>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </BlockHeadContent>
-        </BlockBetween>
-      </BlockHead>
-
-      <Block>
-        <DataTable className="card-stretch">
-          <div className="card-inner position-relative card-tools-toggle">
-            <div className="card-title-group">
-              <div className="card-tools">
-                <div className="form-inline flex-nowrap gx-3">
-                  <div className="form-wrap">
-                    <RSelect
-                      options={bulkActionOptions}
-                      className="w-130px"
-                      placeholder="Bulk Action"
-                      onChange={(e) => onActionText(e)}
-                    />
-                  </div>
-                  <div className="btn-wrap">
-                    <span className="d-none d-md-block">
-                      <Button
-                        disabled={actionText !== "" ? false : true}
-                        color="light"
-                        outline
-                        className="btn-dim"
-                        onClick={(e) => onActionClick(e)}
+  return (
+    <React.Fragment>
+      <Head title="User List - Compact"></Head>
+      <Content>
+        <BlockHead size="sm">
+          <BlockBetween>
+            <BlockHeadContent>
+              <BlockTitle tag="h3" page>
+                Users Lists
+              </BlockTitle>
+              <BlockDes className="text-soft">
+                <p>You have total 2,595 users.</p>
+              </BlockDes>
+            </BlockHeadContent>
+            <BlockHeadContent>
+              <div className="toggle-wrap nk-block-tools-toggle">
+                <Button
+                  className={`btn-icon btn-trigger toggle-expand me-n1 ${sm ? "active" : ""}`}
+                  onClick={() => updateSm(!sm)}
+                >
+                  <Icon name="menu-alt-r"></Icon>
+                </Button>
+                <div className="toggle-expand-content" style={{ display: sm ? "block" : "none" }}>
+                  <ul className="nk-block-tools g-3">
+                    <li>
+                      <a
+                        href="#export"
+                        onClick={(ev) => {
+                          ev.preventDefault();
+                        }}
+                        className="btn btn-white btn-outline-light"
                       >
-                        Apply
+                        <Icon name="download-cloud"></Icon>
+                        <span>Export</span>
+                      </a>
+                    </li>
+                    <li className="nk-block-tools-opt">
+                      <Button color="primary" className="btn-icon" onClick={() => setModal({ add: true })}>
+                        <Icon name="plus"></Icon>
                       </Button>
-                    </span>
-                    <span className="d-md-none">
-                      <Button
-                        color="light"
-                        outline
-                        disabled={actionText !== "" ? false : true}
-                        className="btn-dim  btn-icon"
-                        onClick={(e) => onActionClick(e)}
-                      >
-                        <Icon name="arrow-right"></Icon>
-                      </Button>
-                    </span>
-                  </div>
+                    </li>
+                  </ul>
                 </div>
               </div>
-              <div className="card-tools me-n1">
-                <ul className="btn-toolbar gx-1">
-                  <li>
-                    <a
-                      href="#search"
-                      onClick={(ev) => {
-                        ev.preventDefault();
+            </BlockHeadContent>
+          </BlockBetween>
+        </BlockHead>
+
+        <Block>
+          <DataTable className="card-stretch">
+            <div className="card-inner position-relative card-tools-toggle">
+              <div className="card-title-group">
+                <div className="card-tools">
+                  <div className="form-inline flex-nowrap gx-3">
+                    <div className="form-wrap">
+                      <RSelect
+                        options={bulkActionOptions}
+                        className="w-130px"
+                        placeholder="Bulk Action"
+                        onChange={(e) => onActionText(e)}
+                      />
+                    </div>
+                    <div className="btn-wrap">
+                      <span className="d-none d-md-block">
+                        <Button
+                          disabled={actionText !== "" ? false : true}
+                          color="light"
+                          outline
+                          className="btn-dim"
+                          onClick={(e) => onActionClick(e)}
+                        >
+                          Apply
+                        </Button>
+                      </span>
+                      <span className="d-md-none">
+                        <Button
+                          color="light"
+                          outline
+                          disabled={actionText !== "" ? false : true}
+                          className="btn-dim  btn-icon"
+                          onClick={(e) => onActionClick(e)}
+                        >
+                          <Icon name="arrow-right"></Icon>
+                        </Button>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div className="card-tools me-n1">
+                  <ul className="btn-toolbar gx-1">
+                    <li>
+                      <a
+                        href="#search"
+                        onClick={(ev) => {
+                          ev.preventDefault();
+                          toggle();
+                        }}
+                        className="btn btn-icon search-toggle toggle-search"
+                      >
+                        <Icon name="search"></Icon>
+                      </a>
+                    </li>
+                    <li className="btn-toolbar-sep"></li>
+                    <li>
+                      <div className="toggle-wrap">
+                        <Button
+                          className={`btn-icon btn-trigger toggle ${tablesm ? "active" : ""}`}
+                          onClick={() => updateTableSm(true)}
+                        >
+                          <Icon name="menu-right"></Icon>
+                        </Button>
+                        <div className={`toggle-content ${tablesm ? "content-active" : ""}`}>
+                          <ul className="btn-toolbar gx-1">
+                            <li className="toggle-close">
+                              <Button className="btn-icon btn-trigger toggle" onClick={() => updateTableSm(false)}>
+                                <Icon name="arrow-left"></Icon>
+                              </Button>
+                            </li>
+                            <li>
+                              <UncontrolledDropdown>
+                                <DropdownToggle tag="a" className="btn btn-trigger btn-icon dropdown-toggle">
+                                  <div className="dot dot-primary"></div>
+                                  <Icon name="filter-alt"></Icon>
+                                </DropdownToggle>
+                                <DropdownMenu
+                                  end
+                                  className="filter-wg dropdown-menu-xl"
+                                  style={{ overflow: "visible" }}
+                                >
+                                  <div className="dropdown-head">
+                                    <span className="sub-title dropdown-title">Filter Users</span>
+                                    <div className="dropdown">
+                                      <DropdownItem
+                                        href="#more"
+                                        onClick={(ev) => {
+                                          ev.preventDefault();
+                                        }}
+                                        className="btn btn-sm btn-icon"
+                                      >
+                                        <Icon name="more-h"></Icon>
+                                      </DropdownItem>
+                                    </div>
+                                  </div>
+                                  <div className="dropdown-body dropdown-body-rg">
+                                    <Row className="gx-6 gy-3">
+                                      <Col size="6">
+                                        <div className="custom-control custom-control-sm custom-checkbox">
+                                          <input
+                                            type="checkbox"
+                                            className="custom-control-input"
+                                            id="hasBalance"
+                                          />
+                                          <label className="custom-control-label" htmlFor="hasBalance">
+                                            {" "}
+                                            Have Balance
+                                          </label>
+                                        </div>
+                                      </Col>
+                                      <Col size="6">
+                                        <div className="custom-control custom-control-sm custom-checkbox">
+                                          <input
+                                            type="checkbox"
+                                            className="custom-control-input"
+                                            id="hasKYC"
+                                          />
+                                          <label className="custom-control-label" htmlFor="hasKYC">
+                                            {" "}
+                                            KYC Verified
+                                          </label>
+                                        </div>
+                                      </Col>
+                                      <Col size="6">
+                                        <div className="form-group">
+                                          <label className="overline-title overline-title-alt">Role</label>
+                                          <RSelect options={filterRole} placeholder="Any Role" />
+                                        </div>
+                                      </Col>
+                                      <Col size="6">
+                                        <div className="form-group">
+                                          <label className="overline-title overline-title-alt">Status</label>
+                                          <RSelect options={filterStatus} placeholder="Any Status" />
+                                        </div>
+                                      </Col>
+                                      <Col size="12">
+                                        <div className="form-group">
+                                          <Button color="secondary">Filter</Button>
+                                        </div>
+                                      </Col>
+                                    </Row>
+                                  </div>
+                                  <div className="dropdown-foot between">
+                                    <a
+                                      href="#reset"
+                                      onClick={(ev) => {
+                                        ev.preventDefault();
+                                      }}
+                                      className="clickable"
+                                    >
+                                      Reset Filter
+                                    </a>
+                                    <a
+                                      href="#save"
+                                      onClick={(ev) => {
+                                        ev.preventDefault();
+                                      }}
+                                    >
+                                      Save Filter
+                                    </a>
+                                  </div>
+                                </DropdownMenu>
+                              </UncontrolledDropdown>
+                            </li>
+                            <li>
+                              <UncontrolledDropdown>
+                                <DropdownToggle tag="a" className="btn btn-trigger btn-icon dropdown-toggle">
+                                  <Icon name="setting"></Icon>
+                                </DropdownToggle>
+                                <DropdownMenu end className="dropdown-menu-xs">
+                                  <ul className="link-check">
+                                    <li>
+                                      <span>Show</span>
+                                    </li>
+                                    <li className={itemPerPage === 10 ? "active" : ""}>
+                                      <DropdownItem
+                                        tag="a"
+                                        href="#dropdownitem"
+                                        onClick={(ev) => {
+                                          ev.preventDefault();
+                                          setItemPerPage(10);
+                                        }}
+                                      >
+                                        10
+                                      </DropdownItem>
+                                    </li>
+                                    <li className={itemPerPage === 15 ? "active" : ""}>
+                                      <DropdownItem
+                                        tag="a"
+                                        href="#dropdownitem"
+                                        onClick={(ev) => {
+                                          ev.preventDefault();
+                                          setItemPerPage(15);
+                                        }}
+                                      >
+                                        15
+                                      </DropdownItem>
+                                    </li>
+                                  </ul>
+                                  <ul className="link-check">
+                                    <li>
+                                      <span>Order</span>
+                                    </li>
+                                    <li className={sort === "dsc" ? "active" : ""}>
+                                      <DropdownItem
+                                        tag="a"
+                                        href="#dropdownitem"
+                                        onClick={(ev) => {
+                                          ev.preventDefault();
+                                          setSortState("dsc");
+                                          sortFunc("dsc");
+                                        }}
+                                      >
+                                        DESC
+                                      </DropdownItem>
+                                    </li>
+                                    <li className={sort === "asc" ? "active" : ""}>
+                                      <DropdownItem
+                                        tag="a"
+                                        href="#dropdownitem"
+                                        onClick={(ev) => {
+                                          ev.preventDefault();
+                                          setSortState("asc");
+                                          sortFunc("asc");
+                                        }}
+                                      >
+                                        ASC
+                                      </DropdownItem>
+                                    </li>
+                                  </ul>
+                                </DropdownMenu>
+                              </UncontrolledDropdown>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div className={`card-search search-wrap ${!onSearch && "active"}`}>
+                <div className="card-body">
+                  <div className="search-content">
+                    <Button
+                      className="search-back btn-icon toggle-search active"
+                      onClick={() => {
+                        setSearchText("");
                         toggle();
                       }}
-                      className="btn btn-icon search-toggle toggle-search"
                     >
+                      <Icon name="arrow-left"></Icon>
+                    </Button>
+                    <input
+                      type="text"
+                      className="border-transparent form-focus-none form-control"
+                      placeholder="Search by user or email"
+                      value={onSearchText}
+                      onChange={(e) => onFilterChange(e)}
+                    />
+                    <Button className="search-submit btn-icon">
                       <Icon name="search"></Icon>
-                    </a>
-                  </li>
-                  <li className="btn-toolbar-sep"></li>
-                  <li>
-                    <div className="toggle-wrap">
-                      <Button
-                        className={`btn-icon btn-trigger toggle ${tablesm ? "active" : ""}`}
-                        onClick={() => updateTableSm(true)}
-                      >
-                        <Icon name="menu-right"></Icon>
-                      </Button>
-                      <div className={`toggle-content ${tablesm ? "content-active" : ""}`}>
-                        <ul className="btn-toolbar gx-1">
-                          <li className="toggle-close">
-                            <Button className="btn-icon btn-trigger toggle" onClick={() => updateTableSm(false)}>
-                              <Icon name="arrow-left"></Icon>
-                            </Button>
-                          </li>
-                          <li>
-                            <UncontrolledDropdown>
-                              <DropdownToggle tag="a" className="btn btn-trigger btn-icon dropdown-toggle">
-                                <div className="dot dot-primary"></div>
-                                <Icon name="filter-alt"></Icon>
-                              </DropdownToggle>
-                              <DropdownMenu
-                                end
-                                className="filter-wg dropdown-menu-xl"
-                                style={{ overflow: "visible" }}
-                              >
-                                <div className="dropdown-head">
-                                  <span className="sub-title dropdown-title">Filter Users</span>
-                                  <div className="dropdown">
-                                    <DropdownItem
-                                      href="#more"
-                                      onClick={(ev) => {
-                                        ev.preventDefault();
-                                      }}
-                                      className="btn btn-sm btn-icon"
-                                    >
-                                      <Icon name="more-h"></Icon>
-                                    </DropdownItem>
-                                  </div>
-                                </div>
-                                <div className="dropdown-body dropdown-body-rg">
-                                  <Row className="gx-6 gy-3">
-                                    <Col size="6">
-                                      <div className="custom-control custom-control-sm custom-checkbox">
-                                        <input
-                                          type="checkbox"
-                                          className="custom-control-input"
-                                          id="hasBalance"
-                                        />
-                                        <label className="custom-control-label" htmlFor="hasBalance">
-                                          {" "}
-                                          Have Balance
-                                        </label>
-                                      </div>
-                                    </Col>
-                                    <Col size="6">
-                                      <div className="custom-control custom-control-sm custom-checkbox">
-                                        <input
-                                          type="checkbox"
-                                          className="custom-control-input"
-                                          id="hasKYC"
-                                        />
-                                        <label className="custom-control-label" htmlFor="hasKYC">
-                                          {" "}
-                                          KYC Verified
-                                        </label>
-                                      </div>
-                                    </Col>
-                                    <Col size="6">
-                                      <div className="form-group">
-                                        <label className="overline-title overline-title-alt">Role</label>
-                                        <RSelect options={filterRole} placeholder="Any Role" />
-                                      </div>
-                                    </Col>
-                                    <Col size="6">
-                                      <div className="form-group">
-                                        <label className="overline-title overline-title-alt">Status</label>
-                                        <RSelect options={filterStatus} placeholder="Any Status" />
-                                      </div>
-                                    </Col>
-                                    <Col size="12">
-                                      <div className="form-group">
-                                        <Button color="secondary">Filter</Button>
-                                      </div>
-                                    </Col>
-                                  </Row>
-                                </div>
-                                <div className="dropdown-foot between">
-                                  <a
-                                    href="#reset"
-                                    onClick={(ev) => {
-                                      ev.preventDefault();
-                                    }}
-                                    className="clickable"
-                                  >
-                                    Reset Filter
-                                  </a>
-                                  <a
-                                    href="#save"
-                                    onClick={(ev) => {
-                                      ev.preventDefault();
-                                    }}
-                                  >
-                                    Save Filter
-                                  </a>
-                                </div>
-                              </DropdownMenu>
-                            </UncontrolledDropdown>
-                          </li>
-                          <li>
-                            <UncontrolledDropdown>
-                              <DropdownToggle tag="a" className="btn btn-trigger btn-icon dropdown-toggle">
-                                <Icon name="setting"></Icon>
-                              </DropdownToggle>
-                              <DropdownMenu end className="dropdown-menu-xs">
-                                <ul className="link-check">
-                                  <li>
-                                    <span>Show</span>
-                                  </li>
-                                  <li className={itemPerPage === 10 ? "active" : ""}>
-                                    <DropdownItem
-                                      tag="a"
-                                      href="#dropdownitem"
-                                      onClick={(ev) => {
-                                        ev.preventDefault();
-                                        setItemPerPage(10);
-                                      }}
-                                    >
-                                      10
-                                    </DropdownItem>
-                                  </li>
-                                  <li className={itemPerPage === 15 ? "active" : ""}>
-                                    <DropdownItem
-                                      tag="a"
-                                      href="#dropdownitem"
-                                      onClick={(ev) => {
-                                        ev.preventDefault();
-                                        setItemPerPage(15);
-                                      }}
-                                    >
-                                      15
-                                    </DropdownItem>
-                                  </li>
-                                </ul>
-                                <ul className="link-check">
-                                  <li>
-                                    <span>Order</span>
-                                  </li>
-                                  <li className={sort === "dsc" ? "active" : ""}>
-                                    <DropdownItem
-                                      tag="a"
-                                      href="#dropdownitem"
-                                      onClick={(ev) => {
-                                        ev.preventDefault();
-                                        setSortState("dsc");
-                                        sortFunc("dsc");
-                                      }}
-                                    >
-                                      DESC
-                                    </DropdownItem>
-                                  </li>
-                                  <li className={sort === "asc" ? "active" : ""}>
-                                    <DropdownItem
-                                      tag="a"
-                                      href="#dropdownitem"
-                                      onClick={(ev) => {
-                                        ev.preventDefault();
-                                        setSortState("asc");
-                                        sortFunc("asc");
-                                      }}
-                                    >
-                                      ASC
-                                    </DropdownItem>
-                                  </li>
-                                </ul>
-                              </DropdownMenu>
-                            </UncontrolledDropdown>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className={`card-search search-wrap ${!onSearch && "active"}`}>
-              <div className="card-body">
-                <div className="search-content">
-                  <Button
-                    className="search-back btn-icon toggle-search active"
-                    onClick={() => {
-                      setSearchText("");
-                      toggle();
-                    }}
-                  >
-                    <Icon name="arrow-left"></Icon>
-                  </Button>
-                  <input
-                    type="text"
-                    className="border-transparent form-focus-none form-control"
-                    placeholder="Search by user or email"
-                    value={onSearchText}
-                    onChange={(e) => onFilterChange(e)}
-                  />
-                  <Button className="search-submit btn-icon">
-                    <Icon name="search"></Icon>
-                  </Button>
+                    </Button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <DataTableBody compact>
-            <DataTableHead>
-              <DataTableRow className="nk-tb-col-check">
-                <div className="custom-control custom-control-sm custom-checkbox notext">
-                  <input
-                    type="checkbox"
-                    className="custom-control-input"
-                    onChange={(e) => selectorCheck(e)}
-                    id="uid"
-                  />
-                  <label className="custom-control-label" htmlFor="uid"></label>
-                </div>
-              </DataTableRow>
-              <DataTableRow>
-                <span className="sub-text">User</span>
-              </DataTableRow>
-              <DataTableRow size="md">
-                <span className="sub-text">Role</span>
-              </DataTableRow>
-              <DataTableRow size="sm">
-                <span className="sub-text">Email</span>
-              </DataTableRow>
-              <DataTableRow size="md">
-                <span className="sub-text">Phone</span>
-              </DataTableRow>
-              <DataTableRow size="lg">
-                <span className="sub-text">Company</span>
-              </DataTableRow>
-              <DataTableRow size="lg">
-                <span className="sub-text">Verified</span>
-              </DataTableRow>
-              <DataTableRow size="lg">
-                <span className="sub-text">Last Login</span>
-              </DataTableRow>
-              <DataTableRow>
-                <span className="sub-text">Status</span>
-              </DataTableRow>
-              <DataTableRow className="nk-tb-col-tools text-end">
-                <UncontrolledDropdown>
-                  <DropdownToggle tag="a" className="btn btn-xs btn-outline-light btn-icon dropdown-toggle">
-                    <Icon name="plus"></Icon>
-                  </DropdownToggle>
-                  <DropdownMenu end className="dropdown-menu-xs">
-                    <ul className="link-tidy sm no-bdr">
-                      <li>
-                        <div className="custom-control custom-control-sm custom-checkbox">
-                          <input type="checkbox" className="custom-control-input" id="bl" />
-                          <label className="custom-control-label" htmlFor="bl">
-                            Balance
-                          </label>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="custom-control custom-control-sm custom-checkbox">
-                          <input type="checkbox" className="custom-control-input" id="ph" />
-                          <label className="custom-control-label" htmlFor="ph">
-                            Phone
-                          </label>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="custom-control custom-control-sm custom-checkbox">
-                          <input type="checkbox" className="custom-control-input" id="vri" />
-                          <label className="custom-control-label" htmlFor="vri">
-                            Verified
-                          </label>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="custom-control custom-control-sm custom-checkbox">
-                          <input type="checkbox" className="custom-control-input" id="st" />
-                          <label className="custom-control-label" htmlFor="st">
-                            Status
-                          </label>
-                        </div>
-                      </li>
-                    </ul>
-                  </DropdownMenu>
-                </UncontrolledDropdown>
-              </DataTableRow>
-            </DataTableHead>
-            {/*Head*/}
-            {currentItems.length > 0
-              ? currentItems.map((item) => {
-                  return (
-                    <DataTableItem key={item.id}>
-                      <DataTableRow className="nk-tb-col-check">
-                        <div className="custom-control custom-control-sm custom-checkbox notext">
-                          <input
-                            type="checkbox"
-                            className="custom-control-input"
-                            defaultChecked={item.checked}
-                            id={item.id + "uid1"}
-                            key={Math.random()}
-                            onChange={(e) => onSelectChange(e, item.id)}
-                          />
-                          <label className="custom-control-label" htmlFor={item.id + "uid1"}></label>
-                        </div>
-                      </DataTableRow>
-                      <DataTableRow>
-                        <Link to={`${process.env.PUBLIC_URL}/user-details-regular/${item.id}`}>
-                          <div className="user-card">
-                            <UserAvatar
-                              theme={item.avatarBg}
-                              className="xs"
-                              text={findUpper(item.name)}
-                              image={item.image}
-                            ></UserAvatar>
-                            <div className="user-info">
-                              <span className="tb-lead">{item.name} </span>
-                            </div>
+            <DataTableBody compact>
+              <DataTableHead>
+                <DataTableRow className="nk-tb-col-check">
+                  <div className="custom-control custom-control-sm custom-checkbox notext">
+                    <input
+                      type="checkbox"
+                      className="custom-control-input"
+                      onChange={(e) => selectorCheck(e)}
+                      id="uid"
+                    />
+                    <label className="custom-control-label" htmlFor="uid"></label>
+                  </div>
+                </DataTableRow>
+                <DataTableRow>
+                  <span className="sub-text">User</span>
+                </DataTableRow>
+                <DataTableRow size="md">
+                  <span className="sub-text">Role</span>
+                </DataTableRow>
+                <DataTableRow size="sm">
+                  <span className="sub-text">Email</span>
+                </DataTableRow>
+                <DataTableRow size="md">
+                  <span className="sub-text">Phone</span>
+                </DataTableRow>
+                <DataTableRow size="lg">
+                  <span className="sub-text">Company</span>
+                </DataTableRow>
+                <DataTableRow size="lg">
+                  <span className="sub-text">Verified</span>
+                </DataTableRow>
+                <DataTableRow size="lg">
+                  <span className="sub-text">Last Login</span>
+                </DataTableRow>
+                <DataTableRow>
+                  <span className="sub-text">Status</span>
+                </DataTableRow>
+                <DataTableRow className="nk-tb-col-tools text-end">
+                  <UncontrolledDropdown>
+                    <DropdownToggle tag="a" className="btn btn-xs btn-outline-light btn-icon dropdown-toggle">
+                      <Icon name="plus"></Icon>
+                    </DropdownToggle>
+                    <DropdownMenu end className="dropdown-menu-xs">
+                      <ul className="link-tidy sm no-bdr">
+                        <li>
+                          <div className="custom-control custom-control-sm custom-checkbox">
+                            <input type="checkbox" className="custom-control-input" id="bl" />
+                            <label className="custom-control-label" htmlFor="bl">
+                              Balance
+                            </label>
                           </div>
-                        </Link>
-                      </DataTableRow>
-                      <DataTableRow size="md">
-                        <span>{item.role}</span>
-                      </DataTableRow>
-                      <DataTableRow size="sm">
-                        <span>{item.email}</span>
-                      </DataTableRow>
-                      <DataTableRow size="md">
-                        <span>{item.phone}</span>
-                      </DataTableRow>
-                      <DataTableRow size="lg">
-                        <span>{item.country}</span>
-                      </DataTableRow>
-                      <DataTableRow size="lg">
-                        <ul className="list-status">
-                          <li>
-                            <Icon
-                              className={`text-${
-                                item.emailStatus === "success"
-                                  ? "success"
-                                  : item.emailStatus === "pending"
-                                  ? "info"
-                                  : "secondary"
-                              }`}
-                              name={`${
-                                item.emailStatus === "success"
-                                  ? "check-circle"
-                                  : item.emailStatus === "alert"
-                                  ? "alert-circle"
-                                  : "alarm-alt"
-                              }`}
-                            ></Icon>{" "}
-                            <span>Email</span>
-                          </li>
-                        </ul>
-                      </DataTableRow>
-                      <DataTableRow size="lg">
-                        <span>{item.lastLogin}</span>
-                      </DataTableRow>
-                      <DataTableRow>
-                        <span
-                          className={`tb-status text-${
-                            item.status === "Active" ? "success" : item.status === "Pending" ? "warning" : "danger"
-                          }`}
-                        >
-                          {item.status}
-                        </span>
-                      </DataTableRow>
-                      <DataTableRow className="nk-tb-col-tools">
-                        <ul className="nk-tb-actions gx-1">
-                          <li className="nk-tb-action-hidden" onClick={() => onEditClick(item.id)}>
-                            <TooltipComponent
-                              tag="a"
-                              containerClassName="btn btn-trigger btn-icon"
-                              id={"edit" + item.id}
-                              icon="edit-alt-fill"
-                              direction="top"
-                              text="Edit"
+                        </li>
+                        <li>
+                          <div className="custom-control custom-control-sm custom-checkbox">
+                            <input type="checkbox" className="custom-control-input" id="ph" />
+                            <label className="custom-control-label" htmlFor="ph">
+                              Phone
+                            </label>
+                          </div>
+                        </li>
+                        <li>
+                          <div className="custom-control custom-control-sm custom-checkbox">
+                            <input type="checkbox" className="custom-control-input" id="vri" />
+                            <label className="custom-control-label" htmlFor="vri">
+                              Verified
+                            </label>
+                          </div>
+                        </li>
+                        <li>
+                          <div className="custom-control custom-control-sm custom-checkbox">
+                            <input type="checkbox" className="custom-control-input" id="st" />
+                            <label className="custom-control-label" htmlFor="st">
+                              Status
+                            </label>
+                          </div>
+                        </li>
+                      </ul>
+                    </DropdownMenu>
+                  </UncontrolledDropdown>
+                </DataTableRow>
+              </DataTableHead>
+              {/*Head*/}
+              {currentItems.length > 0
+                ? currentItems.map((item) => {
+                    return (
+                      <DataTableItem key={item.id}>
+                        <DataTableRow className="nk-tb-col-check">
+                          <div className="custom-control custom-control-sm custom-checkbox notext">
+                            <input
+                              type="checkbox"
+                              className="custom-control-input"
+                              defaultChecked={item.checked}
+                              id={item.id + "uid1"}
+                              key={Math.random()}
+                              onChange={(e) => onSelectChange(e, item.id)}
                             />
-                          </li>
-                          {item.status !== "Suspend" && (
-                            <React.Fragment>
-                              <li className="nk-tb-action-hidden" onClick={() => suspendUser(item.id)}>
-                                <TooltipComponent
-                                  tag="a"
-                                  containerClassName="btn btn-trigger btn-icon"
-                                  id={"suspend" + item.id}
-                                  icon="user-cross-fill"
-                                  direction="top"
-                                  text="Suspend"
-                                />
-                              </li>
-                            </React.Fragment>
-                          )}
-                          <li>
-                            <UncontrolledDropdown>
-                              <DropdownToggle tag="a" className="dropdown-toggle btn btn-icon btn-trigger">
-                                <Icon name="more-h"></Icon>
-                              </DropdownToggle>
-                              <DropdownMenu end>
-                                <ul className="link-list-opt no-bdr">
-                                  <li onClick={() => onEditClick(item.id)}>
-                                    <DropdownItem
-                                      tag="a"
-                                      href="#edit"
-                                      onClick={(ev) => {
-                                        ev.preventDefault();
-                                      }}
-                                    >
-                                      <Icon name="edit"></Icon>
-                                      <span>Edit</span>
-                                    </DropdownItem>
-                                  </li>
-                                  {item.status !== "Suspend" && (
-                                    <React.Fragment>
-                                      <li className="divider"></li>
-                                      <li onClick={() => suspendUser(item.id)}>
-                                        <DropdownItem
-                                          tag="a"
-                                          href="#suspend"
-                                          onClick={(ev) => {
-                                            ev.preventDefault();
-                                          }}
-                                        >
-                                          <Icon name="na"></Icon>
-                                          <span>Suspend User</span>
-                                        </DropdownItem>
-                                      </li>
-                                    </React.Fragment>
-                                  )}
-                                </ul>
-                              </DropdownMenu>
-                            </UncontrolledDropdown>
-                          </li>
-                        </ul>
-                      </DataTableRow>
-                    </DataTableItem>
-                  );
-                })
-              : null}
-          </DataTableBody>
-          <div className="card-inner">
-            {currentItems.length > 0 ? (
-              <PaginationComponent
-                itemPerPage={itemPerPage}
-                totalItems={data.length}
-                paginate={paginate}
-                currentPage={currentPage}
-              />
-            ) : (
-              <div className="text-center">
-                <span className="text-silent">No data found</span>
-              </div>
-            )}
-          </div>
-        </DataTable>
-      </Block>
-      <AddModal modal={modal.add} formData={formData} setFormData={setFormData} closeModal={closeModal} onSubmit={onFormSubmit} filterStatus={filterStatus} />
-      <EditModal modal={modal.edit} formData={editFormData} setFormData={setEditFormData} closeModal={closeEditModal} onSubmit={onEditSubmit} filterStatus={filterStatus} />
-    </Content>
-  </>;
+                            <label className="custom-control-label" htmlFor={item.id + "uid1"}></label>
+                          </div>
+                        </DataTableRow>
+                        <DataTableRow>
+                          <Link to={`${process.env.PUBLIC_URL}/user-details-regular/${item.id}`}>
+                            <div className="user-card">
+                              <UserAvatar
+                                theme={item.avatarBg}
+                                className="xs"
+                                text={findUpper(item.name)}
+                                image={item.image}
+                              ></UserAvatar>
+                              <div className="user-info">
+                                <span className="tb-lead">{item.name} </span>
+                              </div>
+                            </div>
+                          </Link>
+                        </DataTableRow>
+                        <DataTableRow size="md">
+                          <span>{item.role}</span>
+                        </DataTableRow>
+                        <DataTableRow size="sm">
+                          <span>{item.email}</span>
+                        </DataTableRow>
+                        <DataTableRow size="md">
+                          <span>{item.phone}</span>
+                        </DataTableRow>
+                        <DataTableRow size="lg">
+                          <span>{item.country}</span>
+                        </DataTableRow>
+                        <DataTableRow size="lg">
+                          <ul className="list-status">
+                            <li>
+                              <Icon
+                                className={`text-${
+                                  item.emailStatus === "success"
+                                    ? "success"
+                                    : item.emailStatus === "pending"
+                                    ? "info"
+                                    : "secondary"
+                                }`}
+                                name={`${
+                                  item.emailStatus === "success"
+                                    ? "check-circle"
+                                    : item.emailStatus === "alert"
+                                    ? "alert-circle"
+                                    : "alarm-alt"
+                                }`}
+                              ></Icon>{" "}
+                              <span>Email</span>
+                            </li>
+                          </ul>
+                        </DataTableRow>
+                        <DataTableRow size="lg">
+                          <span>{item.lastLogin}</span>
+                        </DataTableRow>
+                        <DataTableRow>
+                          <span
+                            className={`tb-status text-${
+                              item.status === "Active" ? "success" : item.status === "Pending" ? "warning" : "danger"
+                            }`}
+                          >
+                            {item.status}
+                          </span>
+                        </DataTableRow>
+                        <DataTableRow className="nk-tb-col-tools">
+                          <ul className="nk-tb-actions gx-1">
+                            <li className="nk-tb-action-hidden" onClick={() => onEditClick(item.id)}>
+                              <TooltipComponent
+                                tag="a"
+                                containerClassName="btn btn-trigger btn-icon"
+                                id={"edit" + item.id}
+                                icon="edit-alt-fill"
+                                direction="top"
+                                text="Edit"
+                              />
+                            </li>
+                            {item.status !== "Suspend" && (
+                              <React.Fragment>
+                                <li className="nk-tb-action-hidden" onClick={() => suspendUser(item.id)}>
+                                  <TooltipComponent
+                                    tag="a"
+                                    containerClassName="btn btn-trigger btn-icon"
+                                    id={"suspend" + item.id}
+                                    icon="user-cross-fill"
+                                    direction="top"
+                                    text="Suspend"
+                                  />
+                                </li>
+                              </React.Fragment>
+                            )}
+                            <li>
+                              <UncontrolledDropdown>
+                                <DropdownToggle tag="a" className="dropdown-toggle btn btn-icon btn-trigger">
+                                  <Icon name="more-h"></Icon>
+                                </DropdownToggle>
+                                <DropdownMenu end>
+                                  <ul className="link-list-opt no-bdr">
+                                    <li onClick={() => onEditClick(item.id)}>
+                                      <DropdownItem
+                                        tag="a"
+                                        href="#edit"
+                                        onClick={(ev) => {
+                                          ev.preventDefault();
+                                        }}
+                                      >
+                                        <Icon name="edit"></Icon>
+                                        <span>Edit</span>
+                                      </DropdownItem>
+                                    </li>
+                                    {item.status !== "Suspend" && (
+                                      <React.Fragment>
+                                        <li className="divider"></li>
+                                        <li onClick={() => suspendUser(item.id)}>
+                                          <DropdownItem
+                                            tag="a"
+                                            href="#suspend"
+                                            onClick={(ev) => {
+                                              ev.preventDefault();
+                                            }}
+                                          >
+                                            <Icon name="na"></Icon>
+                                            <span>Suspend User</span>
+                                          </DropdownItem>
+                                        </li>
+                                      </React.Fragment>
+                                    )}
+                                  </ul>
+                                </DropdownMenu>
+                              </UncontrolledDropdown>
+                            </li>
+                          </ul>
+                        </DataTableRow>
+                      </DataTableItem>
+                    );
+                  })
+                : null}
+            </DataTableBody>
+            <div className="card-inner">
+              {currentItems.length > 0 ? (
+                <PaginationComponent
+                  itemPerPage={itemPerPage}
+                  totalItems={data.length}
+                  paginate={paginate}
+                  currentPage={currentPage}
+                />
+              ) : (
+                <div className="text-center">
+                  <span className="text-silent">No data found</span>
+                </div>
+              )}
+            </div>
+          </DataTable>
+        </Block>
+
+        <AddModal modal={modal.add} formData={formData} setFormData={setFormData} closeModal={closeModal} onSubmit={onFormSubmit} filterStatus={filterStatus} />
+        <EditModal modal={modal.edit} formData={editFormData} setFormData={setEditFormData} closeModal={closeEditModal} onSubmit={onEditSubmit} filterStatus={filterStatus} />
+        
+      </Content>
+    </React.Fragment>
+  );
 };
 export default UserListCompact;

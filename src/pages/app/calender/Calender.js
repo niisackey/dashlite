@@ -40,7 +40,7 @@ const Calender = () => {
     setModal(!modal);
   };
   const { reset, register, handleSubmit, formState: { errors } } = useForm();
-  
+
   const resetForm = () => {
     setFormData({
       title: "",

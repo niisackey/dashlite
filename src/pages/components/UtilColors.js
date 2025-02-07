@@ -7,7 +7,7 @@ import { OverlineTitle } from "../../components/text/Text";
 
 const ColorsPage = ({ ...props }) => {
   return (
-    <>
+    <React.Fragment>
       <Head title="Colors Utility" />
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -90,7 +90,7 @@ const ColorsPage = ({ ...props }) => {
             </div>
           </PreviewCard>
           <PreviewTable>
-            <thead className="bg-lighter">
+            <thead className="table-light">
               <tr>
                 <th className="overline-title w-200px">ClassName Reference</th>
                 <th className="overline-title ">Theme/Color</th>
@@ -185,7 +185,7 @@ const ColorsPage = ({ ...props }) => {
             </div>
           </PreviewCard>
           <PreviewTable>
-            <thead className="bg-lighter">
+            <thead className="table-light">
               <tr>
                 <th className="overline-title w-200px">ClassName Reference</th>
                 <th className="overline-title ">Value</th>
@@ -214,7 +214,7 @@ const ColorsPage = ({ ...props }) => {
             </BlockHeadContent>
           </BlockHead>
           <PreviewTable>
-            <thead className="bg-lighter">
+            <thead className="table-light">
               <tr>
                 <th className="overline-title w-300px">ClassName Reference</th>
                 <th className="overline-title">Preview</th>
@@ -366,7 +366,7 @@ const ColorsPage = ({ ...props }) => {
           <CodeBlock language="jsx">{`<div className="w-80px flex-fill p-2 bg-gray-900 text-white">900</div>`}</CodeBlock>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

@@ -24,15 +24,15 @@ import {
 const CryptoHomePage = () => {
   const [sm, updateSm] = useState(false);
   return (
-    <>
+    <React.Fragment>
       <Head title="Crypto Dashboard" />
       <Content>
         <BlockHead size="sm">
           <BlockBetween>
             <BlockHeadContent>
-              <BlockTitle page>Overview</BlockTitle>
+              <BlockTitle page>Crypto Dashboard</BlockTitle>
               <BlockDes className="text-soft">
-                <p>Welcome to Crypto Buy/Sell Template</p>
+                <p>Welcome to Crypto Buy/Sell Platform</p>
               </BlockDes>
             </BlockHeadContent>
             <BlockHeadContent>
@@ -144,7 +144,7 @@ const CryptoHomePage = () => {
           </Row>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

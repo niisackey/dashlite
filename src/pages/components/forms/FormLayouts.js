@@ -15,7 +15,7 @@ import {
 
 const FormLayoutsPage = ({ ...props }) => {
   return (
-    <>
+    <React.Fragment>
       <Head title="Form Layouts" />
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -387,7 +387,7 @@ const FormLayoutsPage = ({ ...props }) => {
                         type="text"
                         id="site-copyright"
                         className="form-control"
-                        defaultValue="&copy; 2019, DashLite. All Rights Reserved."
+                        defaultValue="&copy; 2025, DashLite React All Rights Reserved."
                       />
                     </div>
                   </div>
@@ -505,7 +505,7 @@ const FormLayoutsPage = ({ ...props }) => {
           </PreviewCard>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

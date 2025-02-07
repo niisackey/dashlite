@@ -9,7 +9,7 @@ import { PreviewCard, PreviewTable, CodeBlock } from "../../components/preview/P
 
 const AlertsPage = ({ ...props }) => {
   return (
-    <>
+    <React.Fragment>
       <Head title="Alerts" />
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -195,7 +195,7 @@ const AlertsPage = ({ ...props }) => {
             </div>
           </PreviewCard>
           <PreviewTable>
-            <thead className="bg-lighter">
+            <thead className="table-light">
               <tr>
                 <th className="overline-title w-300px">Props & Classname Reference</th>
                 <th className="overline-title">Details</th>
@@ -369,7 +369,7 @@ const AlertsPage = ({ ...props }) => {
           </CodeBlock>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

@@ -6,7 +6,7 @@ import { PreviewCard, PreviewTable, CodeBlock } from "../../components/preview/P
 
 const EmbededPage = ({ ...props }) => {
   return (
-    <>
+    <React.Fragment>
       <Head title="Ratio" />
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -32,7 +32,7 @@ const EmbededPage = ({ ...props }) => {
               <BlockTitle tag="h5">Example</BlockTitle>
               <p>
                 Wrap any embed like an <code>&lt;iframe&gt;</code> in a parent element with{" "}
-                <code>.ratio</code> and an aspect ratio.
+                <code>.ratio</code> and an aspect ratio. 
               </p>
             </BlockHeadContent>
           </BlockHead>
@@ -66,7 +66,7 @@ const EmbededPage = ({ ...props }) => {
             </BlockHeadContent>
           </BlockHead>
           <PreviewTable>
-            <thead className="bg-lighter">
+            <thead className="table-light">
               <tr>
                 <th className="overline-title w-300px">className Reference</th>
                 <th className="overline-title">Value</th>
@@ -84,7 +84,7 @@ const EmbededPage = ({ ...props }) => {
           <CodeBlock language="jsx">{`<div className="ratio ratio-16x9"></div>`}</CodeBlock>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

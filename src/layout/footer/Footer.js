@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="nk-footer">
-      <div className="container-fluid">
+    <div className="nk-footer nk-footer-fluid bg-lighter">
+      <div className="container-xl">
         <div className="nk-footer-wrap">
           <div className="nk-footer-copyright">
             {" "}
-            &copy; 2025 DashLite. Template by <a href="https://softnio.com">Softnio</a>
+            &copy; 2025 Dashlite React Template by <a href="https://softnio.com">Softnio</a>
           </div>
           <div className="nk-footer-links">
             <ul className="nav nav-sm">

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import UserAvatar from "../../../../components/user/UserAvatar";
 import { DropdownToggle, DropdownMenu, Dropdown } from "reactstrap";
 import { Icon } from "../../../../components/Component";
@@ -23,8 +23,14 @@ const User = () => {
       >
         <div className="user-toggle">
           <UserAvatar icon="user-alt" className="sm" />
-          <div className="user-info d-none d-md-block">
-            <div className="user-status">Administrator</div>
+          <div className="user-info d-none d-xl-block">
+            <div
+              className={`user-status ${
+                window.location.pathname.split("/")[2] === "invest" ? "user-status-unverified" : ""
+              }`}
+            >
+              {window.location.pathname.split("/")[2] === "invest" ? "Unverified" : "Admininstrator"}
+            </div>
             <div className="user-name dropdown-indicator">Abu Bin Ishityak</div>
           </div>
         </div>
@@ -43,15 +49,36 @@ const User = () => {
         </div>
         <div className="dropdown-inner">
           <LinkList>
-            <LinkItem link="/user-profile-regular" icon="user-alt" onClick={toggle}>
+            <LinkItem
+              link={window.location.pathname.split("/")[2] === "invest" ? "/invest/profile" : "/user-profile-regular"}
+              icon="user-alt"
+              onClick={toggle}
+            >
               View Profile
             </LinkItem>
-            <LinkItem link="/user-profile-setting" icon="setting-alt" onClick={toggle}>
+            <LinkItem
+              link={
+                window.location.pathname.split("/")[2] === "invest"
+                  ? "/invest/profile-setting"
+                  : "/user-profile-setting"
+              }
+              icon="setting-alt"
+              onClick={toggle}
+            >
               Account Setting
             </LinkItem>
-            <LinkItem link="/user-profile-activity" icon="activity-alt" onClick={toggle}>
+            <LinkItem
+              link={
+                window.location.pathname.split("/")[2] === "invest"
+                  ? "/invest/profile-activity"
+                  : "/user-profile-activity"
+              }
+              icon="activity-alt"
+              onClick={toggle}
+            >
               Login Activity
             </LinkItem>
+
             <li>
               <a className={`dark-switch ${theme.skin === 'dark' ? 'active' : ''}`} href="#" 
               onClick={(ev) => {

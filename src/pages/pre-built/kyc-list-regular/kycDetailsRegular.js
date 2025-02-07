@@ -23,18 +23,19 @@ const KycDetailsRegular = () => {
   const [data] = useState(kycData);
   const [user, setUser] = useState();
   let { kycId } = useParams();
+
   useEffect(() => {
-    const id = kycId
+    const id = kycId;
     if (id !== undefined || null || "") {
       let spUser = data.find((item) => item.id === id);
       setUser(spUser);
     } else {
       setUser(data[0]);
     }
-  }, [data]);
+  }, [kycId, data]);
 
   return (
-    <>
+    <React.Fragment>
       <Head title="KYC Details - Regular"></Head>
       {user && (
         <Content>
@@ -253,7 +254,7 @@ const KycDetailsRegular = () => {
           </Block>
         </Content>
       )}
-    </>
+    </React.Fragment>
   );
 };
 export default KycDetailsRegular;

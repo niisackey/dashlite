@@ -15,7 +15,7 @@ import {
 
 const QuillPreview = () => {
   return (
-    <>
+    <React.Fragment>
       <Head title="Quill" />
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -109,7 +109,7 @@ const QuillPreview = () => {
           </CodeBlock>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

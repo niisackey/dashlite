@@ -28,7 +28,7 @@ import {
 const TinymcePreview = () => {
 
   return (
-    <>
+    <React.Fragment>
       <Head title="Tinymce" />
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -61,17 +61,18 @@ const TinymcePreview = () => {
             </BlockHeadContent>
           </BlockHead>
           <PreviewCard>
+            {" "}
             <Editor
               licenseKey='gpl'
-              initialValue='This is the initial content of the editor.'
+              initialValue="<p>This is the initial content of the editor.</p>"
               init={{
-                menubar: 'file edit view format',
+                menubar: "file edit view format",
                 toolbar:
-                  'undo redo | formatselect | ' +
-                  'bold italic | alignleft aligncenter ' +
-                  'alignright alignjustify | outdent indent',
+                  "undo redo | formatselect | " +
+                  "bold italic | alignleft aligncenter " +
+                  "alignright alignjustify | outdent indent",
               }}
-            ></Editor>
+            />
           </PreviewCard>
           <CodeBlock>{`<Editor
     licenseKey='gpl'
@@ -94,6 +95,7 @@ const TinymcePreview = () => {
             </BlockHeadContent>
           </BlockHead>
           <PreviewCard>
+            {" "}
             <Editor
               licenseKey='gpl'
               initialValue="<p>This is the initial content of the editor.</p>"
@@ -121,6 +123,7 @@ const TinymcePreview = () => {
             </BlockHeadContent>
           </BlockHead>
           <PreviewCard>
+            {" "}
             <Editor
               licenseKey='gpl'
               initialValue="<p>This is the initial content of the editor.</p>"
@@ -146,7 +149,7 @@ const TinymcePreview = () => {
 />`}</CodeBlock>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

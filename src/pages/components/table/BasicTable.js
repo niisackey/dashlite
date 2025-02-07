@@ -16,7 +16,7 @@ import { basicData } from "./TableData";
 
 const BasicTable = () => {
   return (
-    <>
+    <React.Fragment>
       <Head title="Basic Tables" />
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -100,7 +100,7 @@ const BasicTable = () => {
           </PreviewCard>
           <CodeBlock language="jsx">
             {`<table className="table">  
-    <thead className="bg-lighter">    
+    <thead className="table-light">    
         <tr>      
             <th scope="col">#</th>      
             <th scope="col">First</th>      
@@ -473,7 +473,7 @@ const BasicTable = () => {
           </CodeBlock>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 export default BasicTable;

@@ -8,7 +8,7 @@ import Accordion from "../../components/partials/accordian/Preview";
 
 const AccordionsPage = () => {
   return (
-    <>
+    <React.Fragment>
       <Head title="Accordions" />
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -481,7 +481,7 @@ const AccordionsPage = () => {
           </CodeBlock>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

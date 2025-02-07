@@ -22,9 +22,10 @@ import { currentTime, findUpper, monthNames, todaysDate } from "../../../utils/U
 import { UserContext } from "./UserContext";
 import { notes } from "./UserData";
 
-const UserDetailsPage = () => {
+const UserDetailsPage = ({ match }) => {
   const { contextData } = useContext(UserContext);
   const [data] = contextData;
+
   const [sideBar, setSidebar] = useState(false);
   const [user, setUser] = useState();
   const [noteData, setNoteData] = useState(notes);
@@ -33,6 +34,7 @@ const UserDetailsPage = () => {
   const navigate = useNavigate();
 
   let { userId } = useParams();
+
 
   // grabs the id of the url and loads the corresponding data
   useEffect(() => {
@@ -43,16 +45,18 @@ const UserDetailsPage = () => {
     } else {
       setUser(data[0]);
     }
-  }, [data]);
+  }, [userId, data]);
+
+  useEffect(() => {
+    document.getElementsByClassName("nk-header")[0].addEventListener("click",function() {
+      setSidebar(false);
+    })
+  },[])
 
   // function to toggle sidebar
   const toggle = () => {
     setSidebar(!sideBar);
   };
-
-  useEffect(() => {
-    sideBar ? document.body.classList.add("toggle-shown") : document.body.classList.remove("toggle-shown");
-  }, [sideBar])
 
   // delete a note
   const deleteNote = (id) => {
@@ -75,7 +79,7 @@ const UserDetailsPage = () => {
   };
 
   return (
-    <>
+    <React.Fragment>
       <Head title="User Details - Regular"></Head>
       {user && (
         <Content>
@@ -371,7 +375,7 @@ const UserDetailsPage = () => {
                     <div className="user-card user-card-s2 mt-5 mt-xxl-0">
                       <UserAvatar className="lg" theme="primary" text={findUpper(user.name)} />
                       <div className="user-info">
-                        <Badge color="outline-light" pill className="ucap">{user.role}</Badge>
+                        <Badge tag="div" className="ucap" pill color="outline-light">{user.role}</Badge>
                         <h5>{user.name}</h5>
                         <span className="sub-text">{user.email}</span>
                       </div>
@@ -595,7 +599,7 @@ const UserDetailsPage = () => {
           </Block>
         </Content>
       )}
-    </>
+    </React.Fragment>
   );
 };
 export default UserDetailsPage;

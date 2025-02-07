@@ -16,7 +16,7 @@ import {
 
 const Faq = ({ ...props }) => {
   return (
-    <>
+    <React.Fragment>
       <Head title="FAQ" />
       <Content>
         <div className="content-page wide-sm m-auto">
@@ -154,7 +154,7 @@ const Faq = ({ ...props }) => {
           </Block>
         </div>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

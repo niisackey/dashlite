@@ -213,7 +213,7 @@ const InboxDraft = ({
           );
         })
       ) : (
-        <div className="d-flex justify-content-center align-items-center mt-5">
+        <div className="d-flex justify-content-center align-items-center py-3">
           <span className="text-mute">No mails available</span>
         </div>
       )}

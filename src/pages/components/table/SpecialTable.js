@@ -16,7 +16,7 @@ import { Card } from "reactstrap";
 
 const SpecialTablePage = () => {
   return (
-    <>
+    <React.Fragment>
       <Head title="Special table" />
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -112,7 +112,7 @@ const SpecialTablePage = () => {
           </Card>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 export default SpecialTablePage;

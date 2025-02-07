@@ -5,7 +5,6 @@ export const saleRevenue = {
   datasets: [
     {
       label: "Sales Revenue",
-      width: "30",
       barPercentage: 0.7,
       categoryPercentage: 0.7,
       backgroundColor: [
@@ -86,18 +85,22 @@ export const salesOverview = {
   datasets: [
     {
       label: "Sales Overview",
-      color: "#798bff",
       fill: true,
       backgroundColor: "rgba(101,118,255,0.25)",
       borderColor: "#798bff",
       barPercentage: 0.1,
       categoryPercentage: 0.1,
-      borderWidth: 2,
+      borderWidth: 4,
       lineTension: 0.1,
       pointBorderColor: "transparent",
       pointBackgroundColor: "transparent",
-      pointHoverBorderColor: "#798bff",
       pointHoverBackgroundColor: "#fff",
+      pointHoverBorderColor: "rgba(101,118,255,0.25)",
+      pointBorderWidth: 2,
+      pointHoverRadius: 3,
+      pointHoverBorderWidth: 2,
+      pointRadius: 3,
+      pointHitRadius: 3,
       data: [
         8200, 7800, 9500, 5500, 9200, 9690, 8200, 7800, 9500, 5500, 9200, 9690, 8200, 7800, 9500, 5500, 9200, 9690,
         8200, 7800, 9500, 5500, 9200, 9690, 8200, 7800, 9500, 5500, 9200, 9690,

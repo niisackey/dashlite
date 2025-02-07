@@ -36,7 +36,7 @@ const FormUpload = () => {
   };
 
   return (
-    <>
+    <React.Fragment>
       <Head title="Form Upload"></Head>
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -69,7 +69,7 @@ const FormUpload = () => {
           </BlockHead>
           <PreviewCard>
             <Row className="g-4">
-              <Col sm="6">
+            <Col sm="6">
                 <div className="form-group">
                   <label className="form-label">Default File Upload</label>
                   <div className="form-control-wrap">
@@ -102,7 +102,7 @@ const FormUpload = () => {
           </PreviewCard>
 
           <CodeBlock language="jsx">
-            {`<div className="form-group">
+          {`<div className="form-group">
     <label className="form-label">Multiple File Upload</label>
     <div className="form-control-wrap">
         <div className="form-file">
@@ -301,7 +301,7 @@ const handleDropChange = (acceptedFiles) => {
           </CodeBlock>
 
           <PreviewTable>
-            <thead className="bg-lighter">
+            <thead className="table-light">
               <tr>
                 <th className="overline-title w-300px">Props Reference</th>
                 <th className="overline-title">Details</th>
@@ -338,7 +338,7 @@ const handleDropChange = (acceptedFiles) => {
           </PreviewTable>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

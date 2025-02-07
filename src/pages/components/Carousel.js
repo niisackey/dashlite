@@ -12,9 +12,10 @@ import { Block, BlockHead, BlockHeadContent, BlockTitle, BlockDes, BackTo } from
 import { PreviewCard, CodeBlock } from "../../components/preview/Preview";
 import { Link } from "react-router-dom";
 
+
 const CarouselPage = ({ ...props }) => {
   return (
-    <>
+    <React.Fragment>
       <Head title="Carousel" />
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -354,7 +355,7 @@ const BasicCarousel = (props) => {
           </CodeBlock>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

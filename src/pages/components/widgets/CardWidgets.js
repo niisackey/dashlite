@@ -38,7 +38,7 @@ const CardWidgets = () => {
     setHeart(!heart);
   };
   return (
-    <>
+    <React.Fragment>
       <Head title="Card Widgets"></Head>
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -284,7 +284,7 @@ const CardWidgets = () => {
             </Row>
           </PreviewCard>
           <CodeBlock language="jsx">
-            {`                <PreviewAltCard>
+            {`<PreviewAltCard>
     <div className="team">
         <div className="team-status bg-danger text-white">
             <Icon name="na" />
@@ -1702,7 +1702,7 @@ const ActionCenter = () => {
           </CodeBlock>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

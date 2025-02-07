@@ -31,7 +31,7 @@ const AdvancedControls = () => {
   const [radio, setRadio] = useState("imageRadio2");
 
   return (
-    <>
+    <React.Fragment>
       <Head title="Advanced Control" />
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -1024,7 +1024,7 @@ const AdvancedControls = () => {
           </CodeBlock>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

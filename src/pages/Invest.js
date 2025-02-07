@@ -26,8 +26,8 @@ import { BalanceBarChart, DepositBarChart, WithdrawBarChart } from "../component
 const InvestHomePage = () => {
   const [sm, updateSm] = useState(false);
   return (
-    <>
-      <Head title="Invest Dashboard" />
+    <React.Fragment>
+      <Head title="Default Dashboard" />
       <Content>
         <BlockHead size="sm">
           <BlockBetween>
@@ -275,7 +275,7 @@ const InvestHomePage = () => {
           </Row>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

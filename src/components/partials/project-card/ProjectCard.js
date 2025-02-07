@@ -8,7 +8,7 @@ import { setDeadlineDays } from "../../../utils/Utils";
 export const ProjectCard = ({ ...props }) => {
   return (
     <React.Fragment>
-      <PreviewCard className="h-100">
+      <PreviewCard className="card-bordered h-100">
         <div className="project">{props.children}</div>
       </PreviewCard>
     </React.Fragment>

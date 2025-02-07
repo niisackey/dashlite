@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import Head from "../../../layout/head/Head";
-import ContentAlt from "../../../layout/content/ContentAlt";
+import Content from "../../../layout/content/Content";
 import AppContact from "./contact/Contact";
 import ChatBody from "./ChatBody";
 import User from "../../../images/avatar/b-sm.jpg";
@@ -78,9 +78,9 @@ const Chat = () => {
   };
 
   return (
-    <>
+    <React.Fragment>
       <Head title="Chat / Messenger"></Head>
-      <ContentAlt>
+      <Content>
         <div className="nk-chat">
           <div className={`nk-chat-aside ${mobileView ? "has-aside" : ""}`}>
             <div className="nk-chat-aside-head">
@@ -122,7 +122,7 @@ const Chat = () => {
               </div>
               <ul className="nk-chat-aside-tools g-2">
                 {mainTab === "Chats" || mainTab === "Channel" ? (
-                  <>
+                  <React.Fragment>
                     <li>
                       <UncontrolledDropdown>
                         <DropdownToggle tag="a" className="btn btn-round btn-icon btn-light dropdown-toggle">
@@ -207,7 +207,7 @@ const Chat = () => {
                         <Icon name="edit-alt-fill"></Icon>
                       </Button>
                     </li>
-                  </>
+                  </React.Fragment>
                 ) : (
                   <li>
                     <Button color="light" className="btn-round btn-icon">
@@ -270,8 +270,8 @@ const Chat = () => {
             </div>
           )}
         </div>
-      </ContentAlt>
-    </>
+      </Content>
+    </React.Fragment>
   );
 };
 

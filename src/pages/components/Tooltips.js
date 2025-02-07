@@ -29,7 +29,7 @@ function TooltipsPage({ ...props }) {
 
   const toggle = () => setTooltipOpen(!tooltipOpen);
   return (
-    <>
+    <React.Fragment>
       <Head title="Tooltips" />
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -139,7 +139,7 @@ function TooltipsPage({ ...props }) {
           </CodeBlock>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 }
 

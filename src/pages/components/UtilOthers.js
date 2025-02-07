@@ -6,7 +6,7 @@ import { PreviewTable, CodeBlock } from "../../components/preview/Preview";
 
 const OthersPage = ({ ...props }) => {
   return (
-    <>
+    <React.Fragment>
       <Head title="Other Utility" />
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -33,7 +33,7 @@ const OthersPage = ({ ...props }) => {
             </BlockHeadContent>
           </BlockHead>
           <PreviewTable>
-            <thead className="bg-lighter">
+            <thead className="table-light">
               <tr>
                 <th className="overline-title w-250px">ClassName Reference</th>
                 <th className="overline-title">Value</th>
@@ -115,7 +115,7 @@ const OthersPage = ({ ...props }) => {
           <CodeBlock language="jsx">{`<div className="gap-sm"></div>`}</CodeBlock>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

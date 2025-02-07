@@ -1,8 +1,8 @@
 import React from "react";
+import classNames from "classnames";
 import { Row, Col,  Label, Form } from "reactstrap";
 import { useForm } from "react-hook-form";
 import { Button } from "../../../components/Component";
-import classNames from "classnames";
 
 const FormValidationComponent = ({ alter, id }) => {
   const {  register, handleSubmit, formState: { errors } } = useForm();

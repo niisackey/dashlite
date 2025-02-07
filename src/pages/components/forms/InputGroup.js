@@ -22,7 +22,7 @@ const InputGroup = () => {
   const [defaultFiles4, setDefaultFiles4] = useState("");
 
   return (
-    <>
+    <React.Fragment>
       <Head title="Input Group"></Head>
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -838,9 +838,9 @@ const InputGroup = () => {
           <CodeBlock language="jsx">
             {`<div className="form-control-wrap">
     <div className="input-group">
-        <div className="form-file">
-            <input type="file" className="form-file-input" id="inputGroupFile04" />
-            <label className="form-file-label" htmlFor="inputGroupFile04">
+        <div className="custom-file">
+            <input type="file" className="custom-file-input" id="inputGroupFile04" />
+            <label className="custom-file-label" htmlFor="inputGroupFile04">
             Choose file
             </label>
         </div>
@@ -854,7 +854,7 @@ const InputGroup = () => {
           </CodeBlock>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

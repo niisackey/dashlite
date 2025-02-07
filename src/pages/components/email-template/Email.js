@@ -28,7 +28,7 @@ import {
 
 const EmailTemplate = () => {
   return (
-    <>
+    <React.Fragment>
       <Head title="Email Templates"></Head>
       <Content page="component">
         <BlockHead>
@@ -38,8 +38,8 @@ const EmailTemplate = () => {
             </BlockTitle>
             <BlockDes>
               <p className="lead">
-                In DashLite, We included 10 clean and minimalist notification email templates that is ready to use for
-                your application to send emails.{" "}
+                In DashLite React, We included 10 clean and minimalist notification email templates that is ready to use
+                for your application to send emails.{" "}
                 <strong className="text-primary">Stand-Alone html files found in packages</strong>.
               </p>
             </BlockDes>
@@ -1096,7 +1096,7 @@ const EmailTemplate = () => {
           </PreviewCard>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 export default EmailTemplate;

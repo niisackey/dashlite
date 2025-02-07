@@ -8,7 +8,7 @@ import { PreviewCard, CodeBlock } from "../../components/preview/Preview";
 
 const BreadcrumbsPage = ({ ...props }) => {
   return (
-    <>
+    <React.Fragment>
       <Head title="Breadcrumb" />
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -132,7 +132,7 @@ const BreadcrumbsPage = ({ ...props }) => {
           </CodeBlock>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

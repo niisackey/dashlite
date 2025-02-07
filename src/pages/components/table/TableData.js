@@ -113,7 +113,7 @@ export const dataTableColumns2 = [
     sortable: true,
     hide: "md",
     cell: (row) => (
-      <ul className="list-status d-flex" style={{minWidth:'170px'}}>
+      <ul className="list-status d-flex" style={{minWidth:'140px'}}>
         <li>
           <Icon
             className={`text-${

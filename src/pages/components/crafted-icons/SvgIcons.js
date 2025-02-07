@@ -7,7 +7,7 @@ import { BlockHead, BlockHeadContent, BlockDes, BackTo, BlockTitle, Block } from
 
 const SVGIconPage = () => {
   return (
-    <>
+    <React.Fragment>
       <Head title="SVG icons"></Head>
       <Content page="component">
         <Block>
@@ -65,7 +65,7 @@ const SVGIconPage = () => {
           </Row>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 export default SVGIconPage;

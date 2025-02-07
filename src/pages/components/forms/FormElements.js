@@ -24,7 +24,7 @@ const FormElementsPage = () => {
   const animatedComponents = makeAnimated();
 
   return (
-    <>
+    <React.Fragment>
       <Head title="Form Elements" />
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -70,7 +70,7 @@ const FormElementsPage = () => {
                     Input text Default
                   </Label>
                   <div className="form-control-wrap">
-                    <Input id="default-0" placeholder="Input placeholder" type="text" />
+                    <input className="form-control" type="text" id="default-0" placeholder="Input placeholder" />
                   </div>
                 </div>
               </Col>
@@ -83,7 +83,7 @@ const FormElementsPage = () => {
                     <div className="form-text-hint">
                       <span className="overline-title">Usd</span>
                     </div>
-                    <Input id="default-1" placeholder="Input placeholder" type="text" />
+                    <input className="form-control" type="text" id="default-1" placeholder="Input placeholder" />
                   </div>
                 </div>
               </Col>
@@ -96,7 +96,7 @@ const FormElementsPage = () => {
                     <div className="form-icon form-icon-left">
                       <Icon name="user" />
                     </div>
-                    <Input id="default-2" placeholder="Input placeholder" type="text" />
+                    <input className="form-control" type="text" id="default-2" placeholder="Input placeholder" />
                   </div>
                 </div>
                 <div className="form-group">
@@ -107,7 +107,7 @@ const FormElementsPage = () => {
                     <div className="form-icon form-icon-right">
                       <Icon name="user" />
                     </div>
-                    <Input id="default-3" placeholder="Input placeholder" type="text" />
+                    <input className="form-control" type="text" id="default-3" placeholder="Input placeholder" />
                   </div>
                 </div>
               </Col>
@@ -117,7 +117,12 @@ const FormElementsPage = () => {
                     Textarea
                   </Label>
                   <div className="form-control-wrap">
-                    <Input className="no-resize" id="default-textarea" defaultValue="Large text area content" type="textarea" />
+                    <input
+                      className="no-resize form-control"
+                      type="textarea"
+                      id="default-textarea"
+                      defaultValue="Large text area content"
+                    />
                   </div>
                 </div>
               </Col>
@@ -432,7 +437,6 @@ const FormElementsPage = () => {
                 <div className="preview-block">
                   <span className="preview-title overline-title">Default</span>
                   <div className="custom-control custom-radio">
-                    
                     <input
                       type="radio"
                       id="customRadio1"
@@ -671,7 +675,7 @@ const FormElementsPage = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">React Select</BlockTitle>
               <p>
-                To use the Dashlite customized version of react-select component import it such as,{" "}
+                To use the Dashlite React customized version of react-select component import it such as,{" "}
                 <code>import {`{RSelect}`} from "/components/Component.js"</code>. Visit the official documentaion{" "}
                 <a href="https://react-select.com/home" target="_blank" rel="noreferrer">
                   here.
@@ -734,7 +738,7 @@ const FormElementsPage = () => {
 }`}</CodeBlock>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

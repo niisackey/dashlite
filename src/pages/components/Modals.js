@@ -46,7 +46,7 @@ const ModalsPage = () => {
 
   //   const code = ;
   return (
-    <>
+    <React.Fragment>
       <Head title="Modals" />
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -531,7 +531,7 @@ const ModalsPage = () => {
           </PreviewCard>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

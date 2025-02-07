@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
 
 const ComponentsPage = ({ ...props }) => {
   return (
-    <>
+    <React.Fragment>
       <Head title="Componets" />
       <Content page="component">
         <BlockHead size="lg" className="wide-sm">
@@ -29,8 +29,8 @@ const ComponentsPage = ({ ...props }) => {
             </BlockTitle>
             <BlockDes>
               <p className="lead">
-                <strong>DashLite</strong> includes all the necessary components and elements with utility classes that
-                helps you to create your web apps or application faster.
+                <strong>DashLite React</strong> includes all the necessary components and elements with utility classes
+                that helps you to create your web apps or application faster.
               </p>
             </BlockDes>
           </BlockHeadContent>
@@ -413,7 +413,7 @@ const ComponentsPage = ({ ...props }) => {
           </Row>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

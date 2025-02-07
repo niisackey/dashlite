@@ -43,7 +43,7 @@ const DateTimePicker = () => {
   };
 
   return (
-    <>
+    <React.Fragment>
       <Head title="Date & Time Picker"></Head>
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -55,13 +55,7 @@ const DateTimePicker = () => {
               Date & Time Picker
             </BlockTitle>
             <BlockDes>
-              <p className="lead">
-                Examples and usage guidelines for date and time picker for forms. For further preview, visit the{" "}
-                <a href="https://reactdatepicker.com/" target="_blank" rel="noreferrer">
-                  React Datepicker
-                </a>{" "}
-                library.
-              </p>
+              <p className="lead">Examples and usage guidelines for date and time picker for forms.</p>
             </BlockDes>
           </BlockHeadContent>
         </BlockHead>
@@ -139,7 +133,6 @@ const DateTimePicker = () => {
                         selectsStart
                         startDate={rangeStart}
                         endDate={rangeEnd}
-                        wrapperClassName="start-m"
                         className="form-control"
                       />{" "}
                       <div className="input-group-addon">TO</div>
@@ -150,7 +143,6 @@ const DateTimePicker = () => {
                         endDate={rangeEnd}
                         selectsEnd
                         minDate={rangeStart}
-                        wrapperClassName="end-m"
                         className="form-control"
                       />
                     </div>
@@ -300,7 +292,7 @@ const DateTimePicker = () => {
 />`}</CodeBlock>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 export default DateTimePicker;

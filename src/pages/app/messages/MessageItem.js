@@ -36,6 +36,7 @@ const MessageItem = ({ id, onClosed, mobileView, setMobileView, data }) => {
   useEffect(() => {
     resizeFunc();
     window.addEventListener("resize", resizeFunc);
+
     return () => {
       window.removeEventListener("resize", resizeFunc);
     };
@@ -50,7 +51,7 @@ const MessageItem = ({ id, onClosed, mobileView, setMobileView, data }) => {
       });
     };
     checkId(id);
-  }, [id, item, itemData, data]);
+  }, [id, item, itemData, data]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const toggleSidebar = () => {
     setSideBar(!sidebar);

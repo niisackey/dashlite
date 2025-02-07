@@ -27,7 +27,7 @@ import {
 const AnalyticsHomePage = () => {
   const [sm, updateSm] = useState(false);
   return (
-    <>
+    <React.Fragment>
       <Head title="Analytics Dashboard" />
       <Content>
         <BlockHead size="sm">
@@ -110,55 +110,55 @@ const AnalyticsHomePage = () => {
 
         <Block>
           <Row className="g-gs">
-            <Col lg="7" xxl="6">
+            <Col lg="7">
               <PreviewAltCard className="h-100">
                 <AudienceOverview />
               </PreviewAltCard>
             </Col>
-            <Col md="6" lg="5" xxl="3">
+            <Col md="6" lg="5">
               <PreviewAltCard className="h-100">
                 <ActiveUser />
               </PreviewAltCard>
             </Col>
-            <Col md="6" lg="5" xxl="3">
+            <Col md="6" lg="5">
               <PreviewAltCard className="h-100">
                 <WebsitePerformance />
               </PreviewAltCard>
             </Col>
-            <Col lg="7" xxl="6">
+            <Col lg="7">
               <Card className="card-bordered h-100">
                 <TrafficChannel />
               </Card>
             </Col>
-            <Col md="6" xxl="3">
-              <PreviewAltCard className="h-100">
-                <TrafficDougnut />
-              </PreviewAltCard>
-            </Col>
-            <Col md="6" xxl="3">
-              <PreviewAltCard className="h-100">
-                <UserMap />
-              </PreviewAltCard>
-            </Col>
-            <Col xxl="6">
-              <Card className="card-bordered h-100">
-                <BrowserUser />
-              </Card>
-            </Col>
-            <Col md="6" xxl="3">
-              <Card className="card-bordered h-100">
-                <PageViewer />
-              </Card>
-            </Col>
-            <Col md="6" xxl="3">
+            <Col sm="6" lg="4">
               <PreviewAltCard className="h-100" bodyClass="h-100 stretch flex-column">
                 <SessionDevice />
               </PreviewAltCard>
             </Col>
+            <Col sm="6" lg="4">
+              <PreviewAltCard className="h-100">
+                <UserMap />
+              </PreviewAltCard>
+            </Col>
+            <Col sm="6" lg="4">
+              <PreviewAltCard className="h-100">
+                <TrafficDougnut />
+              </PreviewAltCard>
+            </Col>
+            <Col sm="6" lg="5">
+              <Card className="card-bordered h-100">
+                <PageViewer />
+              </Card>
+            </Col>
+            <Col lg="7">
+              <Card className="card-bordered h-100">
+                <BrowserUser />
+              </Card>
+            </Col>
           </Row>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

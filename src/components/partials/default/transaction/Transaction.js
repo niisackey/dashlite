@@ -167,7 +167,14 @@ const TransactionTable = () => {
                 </span>
               </DataTableRow>
               <DataTableRow>
-                <Badge className="badge-dot badge-dot-xs" color={item.status === "Paid" ? "success" : item.status === "Due" ? "warning" : "danger"} >{item.status}</Badge>
+                <Badge
+                  className="badge-dot badge-dot-xs"
+                  color={
+                    item.status === "Paid" ? "success" : item.status === "Due" ? "warning" : "danger"
+                  }
+                >
+                  {item.status}
+                </Badge>
               </DataTableRow>
               <DataTableRow className="nk-tb-col-action">
                 <DropdownTrans />

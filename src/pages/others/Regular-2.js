@@ -6,7 +6,7 @@ import { Block, BlockDes, BlockHead, BlockHeadContent, BlockTitle } from "../../
 
 const Regularv2 = ({ ...props }) => {
   return (
-    <>
+    <React.Fragment>
       <Head title="Regular v-2" />
       <Content>
         <BlockHead size="lg">
@@ -72,7 +72,7 @@ const Regularv2 = ({ ...props }) => {
           </article>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

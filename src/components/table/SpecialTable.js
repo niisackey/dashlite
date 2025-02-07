@@ -293,7 +293,7 @@ export const OrderTable = () => {
 export const LoginLogTable = () => {
   return (
     <table className="table table-ulogs">
-      <thead className="bg-lighter">
+      <thead className="table-light">
         <tr>
           <th className="tb-col-os">
             <span className="overline-title">

@@ -25,7 +25,7 @@ const RatingWidgets = () => {
   const [collapse3, setCollapse3] = useState(false);
 
   return (
-    <>
+    <React.Fragment>
       <Head title="Card Widgets"></Head>
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -442,7 +442,7 @@ const RatingWidgets = () => {
                           <span>Fulltime</span>
                         </li>
                       </ul>
-                      <Badge color="outline-info" pill className="badge-dim badge-sm">$1550.00</Badge>
+                      <Badge className="badge-dim badge-sm" pill color="outline-info">$1550.00</Badge>
                     </div>
                     <Collapse isOpen={collapse}>
                       <div className="divider"></div>
@@ -534,7 +534,7 @@ const RatingWidgets = () => {
                           <span>Fulltime</span>
                         </li>
                       </ul>
-                      <Badge color="outline-info" pill className="badge-dim badge-sm">$1550.00</Badge>
+                      <Badge className="badge-dim badge-sm" pill color="outline-info">$1550.00</Badge>
                     </div>
                     <Collapse isOpen={collapse2}>
                       <div className="divider"></div>
@@ -628,7 +628,7 @@ const RatingWidgets = () => {
           <span>Fulltime</span>
         </li>
       </ul>
-      <Badge color="outline-info" pill className="badge-dim badge-sm">$1550.00</Badge>
+      <Badge className="badge-dim badge-sm" pill color="outline-info">$1550.00</Badge>
     </div>
     <Collapse isOpen={collapse2}>
       <div className="divider"></div>
@@ -1350,7 +1350,7 @@ const RatingWidgets = () => {
                     <div className="pb-1 pb-sm-0">
                       <h5 className="title">Design Quality</h5>
                       <div className="d-flex">
-                        <p className="m-0 pr-2">
+                        <p className="m-0 pe-2">
                           by{" "}
                           <a href="#softnio" onClick={(ev) => ev.preventDefault()}>
                             softnio
@@ -1384,7 +1384,7 @@ const RatingWidgets = () => {
                       <div className="pb-1 pb-sm-0">
                         <h5 className="title">Feature Quality</h5>
                         <div className="d-sm-flex">
-                          <span className="m-0 pr-2">
+                          <span className="m-0 pe-2">
                             by{" "}
                             <a href="#softnio" onClick={(ev) => ev.preventDefault()}>
                               softnio
@@ -1427,7 +1427,7 @@ const RatingWidgets = () => {
                       <div className="fake-class">
                         <h6 className="mt-0 d-flex align-center">
                           <span>Abu Bin Ishiyak</span>
-                          <Badge color="outline-info" className="badge-dim ms2">Author</Badge>
+                          <Badge className="badge-dim ms-2" color="outline-info">Author</Badge>
                         </h6>
                         <p className="text-soft">
                           Time zone depend on your server time as we use that by default. So you need to change that
@@ -1460,7 +1460,7 @@ const RatingWidgets = () => {
     <div className="pb-1 pb-sm-0">
       <h5 className="title">Design Quality</h5>
       <div className="d-flex">
-        <p className="m-0 pr-2">
+        <p className="m-0 pe-2">
           by{" "}
           <a href="#softnio" onClick={(ev) => ev.preventDefault()}>
             softnio
@@ -1510,7 +1510,7 @@ const RatingWidgets = () => {
           <CodeBlock language="jsx">{`<Rating type="heart" className="text-danger" initVal={5}></Rating>`}</CodeBlock>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

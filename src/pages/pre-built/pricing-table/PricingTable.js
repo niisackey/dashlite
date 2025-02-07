@@ -17,7 +17,7 @@ import { pricingTableDataV1, pricingTableDataV2 } from "./PricingTableData";
 
 const PricingTable = () => {
   return (
-    <>
+    <React.Fragment>
       <Head title="Pricing Table"></Head>
       <Content>
         <BlockHead size="sm">
@@ -137,7 +137,7 @@ const PricingTable = () => {
           </Row>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

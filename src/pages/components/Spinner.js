@@ -8,7 +8,7 @@ import { PreviewCard, CodeBlock } from "../../components/preview/Preview";
 
 const SpinnerPage = ({ ...props }) => {
   return (
-    <>
+    <React.Fragment>
       <Head title="Spinner" />
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -221,7 +221,7 @@ const SpinnerPage = ({ ...props }) => {
           </CodeBlock>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

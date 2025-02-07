@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Bar } from "react-chartjs-2";
 
-import { Chart, CategoryScale, LinearScale, BarElement, PointElement , Tooltip, Legend,} from "chart.js";
+import { Chart, CategoryScale, LinearScale, BarElement, PointElement, Tooltip, Legend, } from "chart.js";
 Chart.register(CategoryScale, LinearScale, BarElement, PointElement, Tooltip, Legend,);
 
 import {
@@ -40,17 +40,22 @@ export const DepositBarChart = () => {
               bodySpacing: 3,
               padding: 8,
               footerMarginTop: 0,
+              callbacks: {
+                title: function () {
+                  return false; 
+                },
+              },
           },
         },
         maintainAspectRatio: false,
         scales: {
-          y: {
+          y:{
               display: false,
               ticks: {
                 beginAtZero: true,
               },
             },
-          x: {
+          x:{
               display: false,
             },
         },
@@ -85,6 +90,11 @@ export const BalanceBarChart = () => {
               bodySpacing: 3,
               padding: 8,
               footerMarginTop: 0,
+              callbacks: {
+                title: function () {
+                  return false; 
+                },
+              },
           },
         },
         maintainAspectRatio: false,
@@ -130,11 +140,16 @@ export const WithdrawBarChart = () => {
               bodySpacing: 3,
               padding: 8,
               footerMarginTop: 0,
+              callbacks: {
+                title: function () {
+                  return false; 
+                },
+              },
           },
         },
         maintainAspectRatio: false,
         scales: {
-          y: {
+          y:{
               display: false,
               ticks: {
                 beginAtZero: true,
@@ -188,17 +203,22 @@ export const PurchasePlanChart = ({ set }) => {
               bodySpacing: 3,
               padding: 8,
               footerMarginTop: 0,
+              callbacks: {
+                title: function () {
+                  return false; 
+                },
+              },
           },
         },
         maintainAspectRatio: false,
         scales: {
-          y: {
+          y:{
               display: false,
               ticks: {
                 beginAtZero: true,
               },
             },
-          x:{
+          x: {
               display: false,
             },
         },

@@ -10,7 +10,7 @@ import { OverlineTitle } from "../../components/text/Text";
 
 const ButtonsPage = ({ ...props }) => {
   return (
-    <>
+    <React.Fragment>
       <Head title="Buttons" />
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -520,7 +520,7 @@ const ButtonsPage = ({ ...props }) => {
           </CodeBlock>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

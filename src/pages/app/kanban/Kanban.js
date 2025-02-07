@@ -17,8 +17,8 @@ import { KanbanBoardForm, KanbanTaskForm } from "./KanbanForms";
 
 const Kanban = () => {
   const [columns, setColumns] = useState(columnData);
-  const [smBtn, setSmBtn] = useState(false);
   const [boardModal, setBoardModal] = useState(false);
+  const [smBtn, setSmBtn] = useState(false);
   const [taskModal, setTaskModal] = useState(false);
 
   const toggleBoardModal = () => {
@@ -30,7 +30,7 @@ const Kanban = () => {
   };
 
   return (
-    <>
+    <React.Fragment>
       <Head title="Kanban Board"></Head>
       <Content>
         <BlockHead size="sm">
@@ -85,7 +85,7 @@ const Kanban = () => {
           <KanbanTaskForm toggle={toggleTaskModal} data={columns} setData={setColumns} />
         </Modal>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

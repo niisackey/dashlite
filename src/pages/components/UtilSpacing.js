@@ -6,7 +6,7 @@ import { PreviewCard, PreviewTable, CodeBlock } from "../../components/preview/P
 
 const SpacingPage = ({ ...props }) => {
   return (
-    <>
+    <React.Fragment>
       <Head title="Spacing Utility" />
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -36,7 +36,7 @@ const SpacingPage = ({ ...props }) => {
             </BlockHeadContent>
           </BlockHead>
           <PreviewTable>
-            <thead className="bg-lighter">
+            <thead className="table-light">
               <tr>
                 <th className="overline-title w-250px">Reference</th>
                 <th className="overline-title">Value</th>
@@ -100,7 +100,7 @@ const SpacingPage = ({ ...props }) => {
             </div>
           </PreviewCard>
           <PreviewTable>
-            <thead className="bg-lighter">
+            <thead className="table-light">
               <tr>
                 <th className="overline-title w-250px">ClassName Reference</th>
                 <th className="overline-title">Size</th>
@@ -117,9 +117,9 @@ const SpacingPage = ({ ...props }) => {
               </tr>
               <tr>
                 <td>
-                  <code>.ml-{"{size}"}</code>
+                  <code>.ms-{"{size}"}</code>
                   <br />
-                  <code>.mr-{"{size}"}</code>
+                  <code>.me-{"{size}"}</code>
                   <br />
                   <code>.mt-{"{size}"}</code>
                   <br />
@@ -142,11 +142,11 @@ const SpacingPage = ({ ...props }) => {
               <tr>
                 <td>
                   <code>
-                    .ml-{"{screen}"}-{"{size}"}
+                    .ms-{"{screen}"}-{"{size}"}
                   </code>
                   <br />
                   <code>
-                    .mr-{"{screen}"}-{"{size}"}
+                    .me-{"{screen}"}-{"{size}"}
                   </code>
                   <br />
                   <code>
@@ -208,7 +208,7 @@ const SpacingPage = ({ ...props }) => {
             </div>
           </PreviewCard>
           <PreviewTable>
-            <thead className="bg-lighter">
+            <thead className="table-light">
               <tr>
                 <th className="overline-title w-250px">ClassName Reference</th>
                 <th className="overline-title">Size</th>
@@ -225,9 +225,9 @@ const SpacingPage = ({ ...props }) => {
               </tr>
               <tr>
                 <td>
-                  <code>.pl-{"{size}"}</code>
+                  <code>.ps-{"{size}"}</code>
                   <br />
-                  <code>.pr-{"{size}"}</code>
+                  <code>.pe-{"{size}"}</code>
                   <br />
                   <code>.pt-{"{size}"}</code>
                   <br />
@@ -250,11 +250,11 @@ const SpacingPage = ({ ...props }) => {
               <tr>
                 <td>
                   <code>
-                    .pl-{"{screen}"}-{"{size}"}
+                    .ps-{"{screen}"}-{"{size}"}
                   </code>
                   <br />
                   <code>
-                    .pr-{"{screen}"}-{"{size}"}
+                    .pe-{"{screen}"}-{"{size}"}
                   </code>
                   <br />
                   <code>
@@ -294,7 +294,7 @@ const SpacingPage = ({ ...props }) => {
             </BlockHeadContent>
           </BlockHead>
           <PreviewTable>
-            <thead className="bg-lighter">
+            <thead className="table-light">
               <tr>
                 <th className="overline-title w-250px">className Reference</th>
                 <th className="overline-title">Value</th>
@@ -380,7 +380,7 @@ const SpacingPage = ({ ...props }) => {
           </CodeBlock>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

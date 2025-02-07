@@ -5,7 +5,7 @@ import { Block, BlockDes, BlockHead, BlockHeadContent, BlockTitle, PreviewCard }
 
 const Terms = ({ ...props }) => {
   return (
-    <>
+    <React.Fragment>
       <Head title="Terms &amp; Conditions" />
       <Content>
         <div className="content-page wide-md m-auto">
@@ -138,7 +138,7 @@ const Terms = ({ ...props }) => {
           </Block>
         </div>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

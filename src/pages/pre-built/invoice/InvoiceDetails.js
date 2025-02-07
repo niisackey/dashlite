@@ -32,7 +32,7 @@ const InvoiceDetails = () => {
   }, [invoiceId, data]);
 
   return (
-    <>
+    <React.Fragment>
       <Head title="Invoice Detail"></Head>
       {user && (
         <Content>
@@ -196,7 +196,7 @@ const InvoiceDetails = () => {
           </Block>
         </Content>
       )}
-    </>
+    </React.Fragment>
   );
 };
 export default InvoiceDetails;

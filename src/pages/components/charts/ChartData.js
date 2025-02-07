@@ -40,10 +40,7 @@ export const filledLineChart = {
       backgroundColor: "rgba(121, 139, 255, 0.4)",
       pointBorderWidth: 2,
       pointBackgroundColor: "white",
-      pointHoverRadius: 3,
-      pointHoverBorderWidth: 2,
-      pointRadius: 3,
-      pointHitRadius: 3,
+      pointRadius: 4,
       fill: true,
       data: [110, 80, 125, 65, 95, 75, 90, 110, 80, 125, 70, 95],
     },
@@ -212,3 +209,4 @@ export const overviewKnob = {
     },
   ],
 };
+

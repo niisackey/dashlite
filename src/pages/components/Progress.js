@@ -8,7 +8,7 @@ import { PreviewCard, CodeBlock } from "../../components/preview/Preview";
 
 const ProgressPage = ({ ...props }) => {
   return (
-    <>
+    <React.Fragment>
       <Head title="Progress" />
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -217,7 +217,7 @@ const ProgressPage = ({ ...props }) => {
           <CodeBlock language="jsx">{`<Progress animated value="75" />`}</CodeBlock>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

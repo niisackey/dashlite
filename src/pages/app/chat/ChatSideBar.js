@@ -2,9 +2,9 @@ import React, { useState, useContext } from "react";
 import SlideA from "../../../images/slides/slide-a.jpg";
 import SlideB from "../../../images/slides/slide-b.jpg";
 import SlideC from "../../../images/slides/slide-c.jpg";
+import SimpleBar from "simplebar-react";
 import { UserAvatar, Icon, LinkList, LinkItem } from "../../../components/Component";
 import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from "reactstrap";
-import SimpleBar from "simplebar-react";
 import { findUpper } from "../../../utils/Utils";
 import { ChatContext } from "./ChatContext";
 
@@ -42,7 +42,7 @@ const ChatSideBar = ({ sidebar, chat }) => {
         )}
         <div className="user-info">
           <h5>{chat.nickname ? chat.nickname : chat.name}</h5>
-          <span className="sub-text">Active {chat.active === true ? "now" : `${chat.active}`} ago</span>
+          <span className="sub-text">Active {chat.active === true ? "now" : `${chat.active} ago`} </span>
         </div>
         <UncontrolledDropdown className="user-card-menu">
           <DropdownToggle tag="a" className="btn btn-icon btn-sm btn-trigger dropdown-toggle">

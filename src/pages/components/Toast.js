@@ -12,7 +12,7 @@ const ToastPage = ({ ...props }) => {
   const toggle = () => setShow(!show);
 
   return (
-    <>
+    <React.Fragment>
       <Head title="Toast" />
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -508,7 +508,7 @@ const ToastPage = ({ ...props }) => {
           </CodeBlock>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

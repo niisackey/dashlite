@@ -27,7 +27,14 @@ const Support = () => {
               <div className="nk-support-content">
                 <div className="title">
                   <span>{item.name}</span>
-                  <Badge className="badge-dot badge-dot-xs" color={item.status === "Solved" ? "success" : item.status === "Pending" ? "warning" : "info"} >{item.status}</Badge>
+                  <Badge
+                    className="badge-dot badge-dot-xs"
+                    color={
+                      item.status === "Solved" ? "success" : item.status === "Pending" ? "warning" : "info"
+                    }
+                  >
+                    {item.status}
+                  </Badge>
                 </div>
                 <p>{item.text}</p>
                 <span className="time">{item.time}</span>

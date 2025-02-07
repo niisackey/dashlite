@@ -9,7 +9,7 @@ import { PreviewCard, CodeBlock } from "../../components/preview/Preview";
 
 const PaginationPage = ({ ...props }) => {
   return (
-    <>
+    <React.Fragment>
       <Head title="Pagination" />
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -745,7 +745,7 @@ const PaginationPage = ({ ...props }) => {
           </CodeBlock>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

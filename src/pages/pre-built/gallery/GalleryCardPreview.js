@@ -19,7 +19,7 @@ import { galleryData } from "./GalleryData";
 const GalleryCardPreview = () => {
   const [data] = useState(galleryData);
   return (
-    <>
+    <React.Fragment>
       <Head title="Gallery"></Head>
       <Content>
         <BlockHead size="sm">
@@ -48,7 +48,7 @@ const GalleryCardPreview = () => {
           <Row className="g-gs">
             {data.map((item) => {
               return (
-                <Col sm={6} lg={4} xxl={3} key={item.id}>
+                <Col sm={6} lg={4} key={item.id}>
                   <GalleryCard
                     img={item.img}
                     userName={item.userName}
@@ -63,7 +63,7 @@ const GalleryCardPreview = () => {
           </Row>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

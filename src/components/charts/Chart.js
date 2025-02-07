@@ -52,8 +52,9 @@ export const LineChartExample = ({ data, legend }) => {
               grid: {
                 tickMarkLength: 0,
               },
-          },
-          x: {
+            },
+          x: 
+            {
               display: true,
               ticks: {
                 color:"#9eaecf", 
@@ -68,7 +69,7 @@ export const LineChartExample = ({ data, legend }) => {
                 tickMarkLength: 10,
                 offsetGridLines: true,
               },
-          },
+            },
         },
       }}
     />
@@ -104,7 +105,8 @@ export const BarChartExample = ({ data, stacked }) => {
         },
         maintainAspectRatio: false,
         scales: {
-          y: {
+          y: 
+            {
               display: true,
               stacked: stacked ? true : false,
               ticks: {
@@ -118,8 +120,9 @@ export const BarChartExample = ({ data, stacked }) => {
               grid: {
                 tickMarkLength: 0,
               },
-          },
-          x: {
+            },
+          x: 
+            {
               display: true,
               stacked: stacked ? true : false,
               ticks: {
@@ -135,7 +138,7 @@ export const BarChartExample = ({ data, stacked }) => {
                 tickMarkLength: 10,
                 zeroLineColor: "transparent",
               },
-          },
+            },
         },
       }}
     />

@@ -141,7 +141,7 @@ const ReactToastify = () => {
   };
 
   return (
-    <>
+    <React.Fragment>
       <Head title="React Toastify"></Head>
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -314,7 +314,7 @@ const ReactToastify = () => {
         </Block>
       </Content>
       <ToastContainer />
-    </>
+    </React.Fragment>
   );
 };
 

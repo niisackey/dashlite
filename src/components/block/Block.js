@@ -19,8 +19,12 @@ export const BlockContent = ({ className, ...props }) => {
   return <div className={blockContentClass}>{props.children}</div>;
 };
 
-export const BlockBetween = ({ className, ...props }) => {
-  return <div className={`nk-block-between ${className ? className : ""}`}>{props.children}</div>;
+export const BlockBetween = ({ className, size, ...props }) => {
+  return (
+    <div className={`${size ? `nk-block-between-${size}` : "nk-block-between"} ${className ? className : ""}`}>
+      {props.children}
+    </div>
+  );
 };
 export const BlockHead = ({ className, size, wide, ...props }) => {
   const blockHeadClass = classNames({
@@ -51,10 +55,22 @@ export const BlockDes = ({ className, page, ...props }) => {
   return <div className={classes}>{props.children}</div>;
 };
 
-export const BackTo = ({ className, link, icon, ...props }) => {
+export const BlockHeadSub = ({ className, ...props }) => {
+  return (
+    <div className={`nk-block-head-sub ${className ? className : ""}`}>
+      <span>{props.children}</span>
+    </div>
+  );
+};
+
+export const BlockImage = ({ classNames, ...props }) => {
+  return <div className={`nk-block-image ${classNames ? classNames : ""}`}>{props.children}</div>;
+};
+
+export const BackTo = ({ className, link, icon, onClick, ...props }) => {
   const classes = [`back-to${className ? " " + className : ""}`];
   return (
-    <div className="nk-block-head-sub">
+    <div className="nk-block-head-sub" onClick={onClick}>
       <Link className={classes} to={process.env.PUBLIC_URL + link}>
         <Icon name={icon} />
         <span>{props.children}</span>

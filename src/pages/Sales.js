@@ -21,16 +21,15 @@ import {
   Button,
   Row,
   Col,
-  PreviewCard,
   PreviewAltCard,
   BlockBetween,
 } from "../components/Component";
 
-const Homepage = () => {
+const Sales = () => {
   const [sm, updateSm] = useState(false);
   return (
-    <>
-      <Head title="Homepage"></Head>
+    <React.Fragment>
+      <Head title="Sales Dashboard"></Head>
       <Content>
         <BlockHead size="sm">
           <BlockBetween>
@@ -39,7 +38,7 @@ const Homepage = () => {
                 Sales Overview
               </BlockTitle>
               <BlockDes className="text-soft">
-                <p>Welcome to DashLite Dashboard Template</p>
+                <p>Welcome to DashLite React Dashboard Template</p>
               </BlockDes>
             </BlockHeadContent>
             <BlockHeadContent>
@@ -61,7 +60,7 @@ const Homepage = () => {
                           </span>
                           <Icon className="dd-indc" name="chevron-right" />
                         </DropdownToggle>
-                        <DropdownMenu>
+                        <DropdownMenu end>
                           <ul className="link-list-opt no-bdr">
                             <li>
                               <DropdownItem
@@ -117,9 +116,9 @@ const Homepage = () => {
             <Col xxl="6">
               <Row className="g-gs">
                 <Col lg="6" xxl="12">
-                  <PreviewCard>
+                  <PreviewAltCard>
                     <SaleRevenue />
-                  </PreviewCard>
+                  </PreviewAltCard>
                 </Col>
                 <Col lg="6" xxl="12">
                   <Row className="g-gs">
@@ -170,7 +169,7 @@ const Homepage = () => {
           </Row>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
-export default Homepage;
+export default Sales;

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import SimpleBar from "simplebar-react";
 import InboxForm from "./InboxForm";
-import { Icon, UserAvatar, LinkItem, LinkList } from "../../../components/Component";
+import { Icon, UserAvatar, Button, LinkItem, LinkList } from "../../../components/Component";
 import { findUpper } from "../../../utils/Utils";
 import { colourOptions } from "./InboxData";
 import {
@@ -9,7 +9,7 @@ import {
   DropdownMenu,
   DropdownToggle,
   UncontrolledDropdown,
-  Badge,
+  Badge
 } from "reactstrap";
 import LabelFormModal from "./LabelFormModal";
 import ContactsFormModal from "./ContactsFormModal";
@@ -31,7 +31,7 @@ const InboxAside = ({
 }) => {
   const [composeModal, setComposeModal] = useState(false);
   const [composeMail, setComposeMail] = useState("");
-  
+
   const [contactModal, setContactModal] = useState(false);
 
   const [labelModal, setLabelModal] = useState({
@@ -199,7 +199,7 @@ const InboxAside = ({
     let defaultVal = labels.filter((item) => item.id !== id);
     setLabels(defaultVal);
   };
-  
+
   return (
     <div className={`nk-ibx-aside toggle-screen-lg ${aside ? "content-active" : ""}`}>
       <div className="nk-ibx-head">

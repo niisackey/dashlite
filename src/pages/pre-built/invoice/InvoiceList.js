@@ -65,7 +65,7 @@ const InvoiceList = () => {
   const toggle = () => setonSearch(!onSearch);
 
   return (
-    <>
+    <React.Fragment>
       <Head title="Invoice List"></Head>
       <Content>
         <BlockHead size="sm">
@@ -292,7 +292,7 @@ const InvoiceList = () => {
           </Card>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 export default InvoiceList;

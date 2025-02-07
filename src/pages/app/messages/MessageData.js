@@ -211,9 +211,9 @@ export const messageData = [
   },
   {
     id: 10,
-    name: "Amanda Moore",
+    name: "Amanda Clarke",
     date: "28 Dec, 2019",
-    image: User3,
+    image: User2,
     marked: false,
     closed: false,
     messageTitle: "Wallet needs to verify.",

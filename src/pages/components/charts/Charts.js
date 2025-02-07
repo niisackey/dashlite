@@ -30,7 +30,7 @@ import {
 
 const ChartPage = () => {
   return (
-    <>
+    <React.Fragment>
       <Head title="Chart Js" />
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -201,7 +201,7 @@ const ChartPage = () => {
           </Row>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 export default ChartPage;

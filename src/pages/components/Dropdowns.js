@@ -13,7 +13,7 @@ const DropdownsPage = () => {
 
   const toggle = () => setDropdownOpen((prevState) => !prevState);
   return (
-    <>
+    <React.Fragment>
       <Head title="Dropdowns" />
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -827,7 +827,7 @@ const DropdownsPage = () => {
           </CodeBlock>
 
           <PreviewTable>
-            <thead className="bg-lighter">
+            <thead className="table-light">
               <tr>
                 <th className="overline-title w-300px">Classname Reference</th>
                 <th className="overline-title">Details</th>
@@ -1710,7 +1710,7 @@ const DropdownsPage = () => {
           </CodeBlock>
 
           <PreviewTable>
-            <thead className="bg-lighter">
+            <thead className="table-light">
               <tr>
                 <th className="overline-title w-300px">Classname Reference</th>
                 <th className="overline-title">Details</th>
@@ -2073,7 +2073,7 @@ const DropdownsPage = () => {
           </CodeBlock>
 
           <PreviewTable>
-            <thead className="bg-lighter">
+            <thead className="table-light">
               <tr>
                 <th className="overline-title w-300px">Classname Reference</th>
                 <th className="overline-title">Details</th>
@@ -2262,7 +2262,7 @@ const DropdownsPage = () => {
           </CodeBlock>
 
           <PreviewTable>
-            <thead className="bg-lighter">
+            <thead className="table-light">
               <tr>
                 <th className="overline-title w-300px">Classname Reference</th>
                 <th className="overline-title">Details</th>
@@ -2553,7 +2553,7 @@ const DropdownsPage = () => {
           </CodeBlock>
 
           <PreviewTable>
-            <thead className="bg-lighter">
+            <thead className="table-light">
               <tr>
                 <th className="overline-title w-300px">Classname Reference</th>
                 <th className="overline-title">Details</th>
@@ -2584,7 +2584,7 @@ const DropdownsPage = () => {
           </PreviewTable>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

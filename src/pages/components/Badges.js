@@ -9,7 +9,7 @@ import { OverlineTitle } from "../../components/text/Text";
 
 const BadgesPage = () => {
   return (
-    <>
+    <React.Fragment>
       <Head title="Badges" />
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -207,7 +207,7 @@ const BadgesPage = () => {
             </ul>
           </PreviewCard>
           <PreviewTable>
-            <thead className="bg-lighter">
+            <thead className="table-light">
               <tr>
                 <th className="overline-title w-200px">Props Reference</th>
                 <th className="overline-title">Details</th>
@@ -591,7 +591,7 @@ const BadgesPage = () => {
             </ul>
           </PreviewCard>
           <PreviewTable>
-            <thead className="bg-lighter">
+            <thead className="table-light">
               <tr>
                 <th className="overline-title w-200px">ClassName Reference</th>
                 <th className="overline-title">Details</th>
@@ -612,7 +612,7 @@ const BadgesPage = () => {
           <CodeBlock language="jsx">{`<Badge className="badge-lg" pill color="primary">Primary</Badge>`}</CodeBlock>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

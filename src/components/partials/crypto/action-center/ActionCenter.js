@@ -56,8 +56,7 @@ const ActionCenter = () => {
               <Icon name="cc-alt-fill"></Icon>
               <div className="title">Pending Buy/Sell Orders</div>
               <p>
-                We have still <strong>40 buy orders</strong> and <strong>12 sell orders</strong>, thats need to review
-                &amp; take necessary action.
+                We have still <strong>40 buy orders</strong> and <strong>12 sell orders</strong>, thats need to review.
               </p>
             </div>
             <Button className="btn-icon btn-trigger me-n2">

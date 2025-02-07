@@ -17,7 +17,7 @@ import { Row, Col } from "reactstrap";
 
 const NumberSpinner = () => {
   return (
-    <>
+    <React.Fragment>
       <Head title="Number Spinner"></Head>
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -76,7 +76,7 @@ const NumberSpinner = () => {
           </CodeBlock>
 
           <PreviewTable>
-            <thead className="bg-lighter">
+            <thead className="table-light">
               <tr>
                 <th className="overline-title w-300px">Props Reference</th>
                 <th className="overline-title">Details</th>
@@ -138,7 +138,7 @@ const NumberSpinner = () => {
           </PreviewTable>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

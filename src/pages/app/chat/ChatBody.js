@@ -41,16 +41,16 @@ const ChatBody = ({ id, mobileView, setMobileView, setSelectedId }) => {
   };
 
   useEffect(() => {
-    chat.forEach((item) => {
-      if (item.id === id) {
-        setUchat(item);
-      }
-    });
+    let found = chat.find((item) => item.id === id);
+    if (found) {
+      setUchat(found);
+    }
   }, [id, chat]);
 
   useEffect(() => {
     window.addEventListener("resize", resizeFunc);
     resizeFunc();
+
     return () => {
       window.removeEventListener("resize", resizeFunc);
     };

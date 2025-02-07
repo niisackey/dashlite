@@ -26,7 +26,7 @@ const center = {
 
 const GoogleMapPage = () => {
   return (
-    <>
+    <React.Fragment>
       <Head title="Google map"></Head>
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -121,7 +121,7 @@ const GoogleMapPage = () => {
           </CodeBlock>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

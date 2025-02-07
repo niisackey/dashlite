@@ -5,7 +5,7 @@ import { BlockHead, BlockHeadContent } from "../../components/Component";
 
 const IconLibrary = () => {
   return (
-    <>
+    <React.Fragment>
       <Head title="Icon Library"></Head>
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -26,7 +26,7 @@ const IconLibrary = () => {
           </BlockHeadContent>
         </BlockHead>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 export default IconLibrary;

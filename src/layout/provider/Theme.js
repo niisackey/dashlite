@@ -16,11 +16,9 @@ const ThemeProvider = ({...props}) => {
   
   const defaultTheme = {
     main: "default", //other value can be passed "clean,shady,softy"
-    sidebar: "dark", //other value can be passed "light,white,theme"
-    sidebarCompact: false,
     sidebarVisibility: false,
     sidebarMobile: false,
-    header: "white", //other value can be passed "light,dark,theme"
+    header: "theme", //other value can be passed "light,dark,white"
     skin: "light", //other value can be passed "dark"
   }
     const [theme, setTheme] = useState(defaultTheme);
@@ -28,12 +26,6 @@ const ThemeProvider = ({...props}) => {
     const themeUpdate = {
       uistyle : function(value){
         setTheme({...theme, main : value})
-      },
-      sidebar : function(value){
-        setTheme({...theme, sidebar : value})
-      },
-      sidebarCompact : function(e){
-        setTheme({...theme, sidebarCompact : !theme.sidebarCompact})
       },
       sidebarVisibility : function(e){
         setTheme({...theme, sidebarVisibility : !theme.sidebarVisibility})
@@ -53,7 +45,7 @@ const ThemeProvider = ({...props}) => {
     }
 
     const bodyClass = classNames({
-      "nk-body bg-lighter npc-default has-sidebar no-touch nk-nio-theme": true,
+      "nk-body bg-lighter npc-invest has-touch nk-nio-theme": true,
     });
 
   useEffect(() => {
@@ -93,7 +85,7 @@ const ThemeProvider = ({...props}) => {
 
   useEffect(() => {
     const handleMobileSidebar = () => {
-        if (window.innerWidth < 1200) {
+        if (window.innerWidth < 992) {
           setTheme({...theme, sidebarMobile : true})
         } else {
           setTheme({...theme, sidebarMobile : false, sidebarVisibility : false})

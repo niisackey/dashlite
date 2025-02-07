@@ -6,7 +6,7 @@ import { PreviewTable, CodeBlock } from "../../components/preview/Preview";
 
 const DisplayPage = ({ ...props }) => {
   return (
-    <>
+    <React.Fragment>
       <Head title="Display Utility" />
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -34,7 +34,7 @@ const DisplayPage = ({ ...props }) => {
             </BlockHeadContent>
           </BlockHead>
           <PreviewTable>
-            <thead className="bg-lighter">
+            <thead className="table-light">
               <tr>
                 <th className="overline-title w-250px">ClassName Reference</th>
                 <th className="overline-title ">Name</th>
@@ -81,7 +81,7 @@ const DisplayPage = ({ ...props }) => {
             </BlockHeadContent>
           </BlockHead>
           <PreviewTable>
-            <thead className="bg-lighter">
+            <thead className="table-light">
               <tr>
                 <th className="overline-title w-35">ClassName Reference</th>
                 <th className="overline-title ">Screen Size</th>
@@ -165,7 +165,7 @@ const DisplayPage = ({ ...props }) => {
           <CodeBlock language="jsx">{`<div className="d-xl-none"></div>`}</CodeBlock>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

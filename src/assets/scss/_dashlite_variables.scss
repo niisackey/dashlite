@@ -1,7 +1,6 @@
 ////////////////////////////////////////////////////////
 ////////     CORE DASHLITE VARIABLES    ///// //////////
 ////////////////////////////////////////////////////////
-
 @use 'sass:math';
 $font-url: '../../../fonts';
 /////////    COLORS    ///////////
@@ -63,7 +62,7 @@ $accent-dark:  		#2c3782;
 $accent-dim:  	    #e3e7fe;
 
 
-$body-bg:			$lighter;
+$body-bg:			$white;
 $body-color:		$base-text;
 
 $link-color:        		$accent-500;
@@ -156,7 +155,7 @@ $fx-sz-15:			15px;
 $fx-sz-16:			16px; 
 
 $gutter-width:           28px;
-$stretch-gap-x:          (4px + math.div($gutter-width, 2));
+$stretch-gap-x:          (4px + math.div($gutter-width,2));
 
 /////////    TYPTOGRAPHY    //////////
 //////////////////////////////////////
@@ -265,7 +264,7 @@ $field-line-height-lg:    	1.25rem;
 $field-padding-y-xl:      	0.625rem;
 $field-padding-x-xl:      	1.25rem;
 $field-font-size-xl:      	$fx-sz-15;
-$field-line-height-xl:    	2rem; 
+$field-line-height-xl:    	2rem;
 
 $field-border-width:      	$border-width;
 
@@ -398,8 +397,8 @@ $input-height-inner:                    $input-line-height + $input-padding-y * 
 $input-height-inner-sm:                 $input-line-height-sm + $input-padding-y-sm * 2;
 $input-height-inner-lg:                 $input-line-height-lg + $input-padding-y-lg * 2;
 $input-height-inner-xl:                 $input-line-height-xl + $input-padding-y-xl * 2;
-$input-height-inner-half:               $input-line-height * .5 + $input-padding-y;
-$input-height-inner-quarter:            $input-line-height * .25 + math.div($input-padding-y , 2);
+$input-height-inner-half:               add($input-line-height * .5, $input-padding-y);
+$input-height-inner-quarter:            add($input-line-height * .25, math.div($input-padding-y , 2));
 
 $input-height:                          calc(#{$input-height-inner} + #{$input-height-border});
 $input-height-sm:                       calc(#{$input-height-inner-sm} + #{$input-height-border});
@@ -724,7 +723,7 @@ $logo-height-icon:                  33px;
 
 // Sidebar
 $sidebar-width-normal:              290px;
-$sidebar-width-compact:             74px;
+$sidebar-width-short:               81px;
 $sidebar-gap-x:                     24px;
 
 $sidebar-width-fat:                 400px;
@@ -742,17 +741,16 @@ $sidebar-apps-transition-duration:   450ms;
 
 $sidebar-transition-name:           ease;
 $sidebar-transition-duration:       450ms;
-$sidebar-overlay:                   rgba($darker,.4); //v120
+$sidebar-overlay:                   rgba($darker,.4); 
 
 $sidebar-bg-color:					$lighter;
 $sidebar-border-color:              $light-200;
 
 $sidebar-bg-dark-color:			    $darker;
 $sidebar-border-dark-color:         lighten($sidebar-bg-dark-color, 10%);
-//@i-v120 -s-
 $sidebar-bg-theme-color:			darken($accent-dark,2%);
 $sidebar-border-theme-color:		lighten($sidebar-bg-theme-color, 10%);
-//@i-v120 -e-
+
 $sidebar-bg-light-color:            $white;
 $sidebar-border-light-color:        $light;
 
@@ -779,7 +777,7 @@ $header-min-width:                  $min-body-width;
 
 $header-bg-color:                   $lighter;
 $header-bg-dark-color:              $darker;
-$header-bg-theme-color:             darken($accent-dark,2%); //@i-v120 
+$header-bg-theme-color:             darken($accent-dark,2%); 
 $header-border-bottom:				$border-light;
 $header-border-dark-bottom:		    lighten($header-bg-dark-color, 10%);
 $header-border-theme-bottom:		lighten($header-bg-theme-color, 10%);
@@ -815,7 +813,7 @@ $menu-icon-width:                   36px;
 $menu-icon-width-sm:                32px;
 
 
-//////  CONFIGURATION VARIABLE  @io-v120  //////
+//////  CONFIGURATION VARIABLE //////
 $dark_option:           true;
 $dark_theme_option:     true;
 $gd_analytic:           true;

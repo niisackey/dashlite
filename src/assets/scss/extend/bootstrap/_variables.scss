@@ -316,7 +316,7 @@ $position-values: (
 //
 // Settings for the `<body>` element.
 
-$body-bg:                   $white;
+$body-bg:                   $white !default;
 $body-color:                $base-text;
 $body-text-align:           null !default;
 
@@ -1648,3 +1648,8 @@ $offcanvas-box-shadow:              $modal-content-box-shadow-xs !default;
 // $kbd-bg:                            $gray-900 !default;
 
 // $pre-color:                         null !default;
+
+
+
+
+

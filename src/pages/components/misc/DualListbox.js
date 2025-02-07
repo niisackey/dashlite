@@ -27,7 +27,7 @@ const options = [
 
 const DualListPage = () => {
   return (
-    <>
+    <React.Fragment>
       <Head title="Duallistbox"></Head>
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -107,7 +107,7 @@ const DualListPage = () => {
           </PreviewCard>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

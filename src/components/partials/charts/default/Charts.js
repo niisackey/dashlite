@@ -25,49 +25,8 @@ export const BarChart = ({ sales }) => {
   return (
     <Bar
       className="sales-bar-chart chartjs-render-monitor"
+      width={180}
       data={sales ? saleRevenue : activeSubscription}
-      options={{
-        plugins: {
-          legend: {
-              display: false,
-          },
-          tooltip: {
-              enabled: true,
-              displayColors: false,
-              backgroundColor: "#eff6ff",
-              titleFont: {
-                size: '11px',
-              },
-              titleColor: "#6783b8",
-              titleMarginBottom: 4,
-              bodyColor: "#9eaecf",
-              bodyFont: {
-                size: '10px',
-              },
-              bodySpacing: 3,
-              padding: 8,
-              footerMarginTop: 0,
-          },
-        },
-        scales: {
-          y:{
-              display: false,
-          },
-          x:{
-              display: false,
-          },
-        },
-        maintainAspectRatio: false,
-      }}
-    />
-  );
-};
-
-export const LineChart = () => {
-  return (
-    <Line
-      className="sales-overview-chart"
-      data={salesOverview}
       options={{
         plugins: {
           legend: {
@@ -96,6 +55,53 @@ export const LineChart = () => {
               },
           },
         },
+        scales: {
+          y: {
+              display: false,
+            },
+          x:{
+              display: false,
+            },
+        },
+        maintainAspectRatio: false,
+      }}
+    />
+  );
+};
+
+export const LineChart = () => {
+  return (
+    <Line
+      className="sales-overview-chart"
+      data={salesOverview}
+      options={{
+        plugins: {
+          legend: {
+              display: false,
+          },
+          tooltip: {
+              enabled: true,
+              displayColors: false,
+              backgroundColor: "#eff6ff",
+              titleFont: {
+                size: '13px',
+              },
+              titleColor: "#6783b8",
+              titleMarginBottom: 6,
+              bodyColor: "#9eaecf",
+              bodyFont: {
+                size: '12px',
+              },
+              bodySpacing: 4,
+              padding: 10,
+              footerMarginTop: 0,
+              callbacks: {
+                label: function (context) {
+                    return context.parsed.y;
+                },
+              },
+          },
+        },
         maintainAspectRatio: false,
         scales: {
           y:{
@@ -116,7 +122,7 @@ export const LineChart = () => {
               grid: {
                 tickMarkLength: 0,
               },
-          },
+            },
           x:{
               display: true,
               ticks: {
@@ -132,7 +138,7 @@ export const LineChart = () => {
                 tickMarkLength: 0,
                 zeroLineColor: "transparent",
               },
-          },
+            },
         },
       }}
     />
@@ -202,7 +208,7 @@ export const DoubleBar = ({ state }) => {
               grid: {
                 tickMarkLength: 0,
               },
-          },
+            },
           x:{
               display: true,
               ticks: {
@@ -219,7 +225,7 @@ export const DoubleBar = ({ state }) => {
                 tickMarkLength: 0,
                 zeroLineColor: "transparent",
               },
-          },
+            },
         },
       }}
     />
@@ -269,7 +275,7 @@ export const HorizontalBarChart = ({ state }) => {
         indexAxis: "y",
         maintainAspectRatio: false,
         scales: {
-          y: {
+          y:{
               display: false,
               stacked: true,
               ticks: {
@@ -279,7 +285,7 @@ export const HorizontalBarChart = ({ state }) => {
               grid: {
                 tickMarkLength: 0,
               },
-          },
+            },
           x:{
               display: false,
               stacked: true,
@@ -296,7 +302,7 @@ export const HorizontalBarChart = ({ state }) => {
                 tickMarkLength: 0,
                 zeroLineColor: "transparent",
               },
-          },
+            },
         },
       }}
     />
@@ -345,17 +351,17 @@ export const StackedBarChart = ({ state }) => {
         },
         maintainAspectRatio: false,
         scales: {
-          y: {
+          y:{
               display: false,
               stacked: true,
               ticks: {
                 beginAtZero: true,
               },
-          },
-          x: {
+            },
+          x:{
               display: false,
               stacked: true,
-          },
+            },
         },
       }}
     />

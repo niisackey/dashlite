@@ -149,7 +149,7 @@ const KycListRegular = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <>
+    <React.Fragment>
       <Head title="KYC Lists - Regular"></Head>
       <Content>
         <BlockHead size="sm">
@@ -310,6 +310,7 @@ const KycListRegular = () => {
                                     <li>
                                       <span>Show</span>
                                     </li>
+
                                     <li className={itemPerPage === 10 ? "active" : ""}>
                                       <DropdownItem
                                         tag="a"
@@ -623,10 +624,10 @@ const KycListRegular = () => {
                                     </li>
                                     <li>
                                       <Link
-                                        to={`${process.env.PUBLIC_URL}/kyc-details-regular/${item.id}`}
-                                      >
-                                        <Icon name="focus"></Icon>
-                                        <span>View Details</span>
+                                          to={`${process.env.PUBLIC_URL}/kyc-details-regular/${item.id}`}
+                                        >
+                                          <Icon name="focus"></Icon>
+                                          <span>View Details</span>
                                       </Link>
                                     </li>
                                     {item.status === "Rejected" ? null : item.status === "Approved" ? (
@@ -752,7 +753,7 @@ const KycListRegular = () => {
           </div>
         </ModalBody>
       </Modal>
-    </>
+    </React.Fragment>
   );
 };
 export default KycListRegular;

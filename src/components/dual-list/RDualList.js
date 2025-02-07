@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import DualListBox from "react-dual-listbox";
-import { Icon } from "../Component";
+import Icon from "../icon/Icon";
 
 const ReactDualList = ({ options, icon, canFilter, preSelected }) => {
   const [data, setData] = useState(options);

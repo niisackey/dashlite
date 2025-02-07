@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
+import Content from "../../../layout/content/Content";
+import Head from "../../../layout/head/Head";
 import {
   DropdownMenu,
   DropdownToggle,
   UncontrolledDropdown,
-  DropdownItem
+  DropdownItem,
 } from "reactstrap";
 import {
   Block,
@@ -26,8 +28,6 @@ import {
   TooltipComponent,
   RSelect,
 } from "../../../components/Component";
-import Content from "../../../layout/content/Content";
-import Head from "../../../layout/head/Head";
 import { filterRole, filterStatus, userData } from "./UserData";
 import { bulkActionOptions, findUpper } from "../../../utils/Utils";
 import { Link } from "react-router-dom";
@@ -210,7 +210,7 @@ const UserListRegularPage = () => {
       }
     });
   };
-  
+
   // function to change to suspend property for an item
   const suspendUser = (id) => {
     let newData = data;
@@ -840,7 +840,7 @@ const UserListRegularPage = () => {
             </div>
           </DataTable>
         </Block>
-
+        
         <AddModal modal={modal.add} formData={formData} setFormData={setFormData} closeModal={closeModal} onSubmit={onFormSubmit} filterStatus={filterStatus} />
         <EditModal modal={modal.edit} formData={editFormData} setFormData={setEditFormData} closeModal={closeEditModal} onSubmit={onEditSubmit} filterStatus={filterStatus} />
         

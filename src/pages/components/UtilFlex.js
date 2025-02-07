@@ -6,7 +6,7 @@ import { PreviewCard, CodeBlock } from "../../components/preview/Preview";
 
 const FlexPage = ({ ...props }) => {
   return (
-    <>
+    <React.Fragment>
       <Head title="Flex Utility" />
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -570,7 +570,7 @@ const FlexPage = ({ ...props }) => {
           </CodeBlock>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

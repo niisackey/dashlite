@@ -21,7 +21,7 @@ import { Col, Row } from "reactstrap";
 
 const Avatar = () => {
   return (
-    <>
+    <React.Fragment>
       <Head title="Avatar"></Head>
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -330,7 +330,7 @@ const Avatar = () => {
             </Row>
           </PreviewCard>
           <PreviewTable>
-            <thead className="bg-lighter">
+            <thead className="table-light">
               <tr>
                 <th className="overline-title w-300px">Props Reference</th>
                 <th className="overline-title">Details</th>
@@ -430,8 +430,8 @@ const Avatar = () => {
               </Col>
             </Row>
           </PreviewCard>
-          <PreviewTable>
-            <thead className="bg-lighter">
+          <PreviewTable className="card-bordered">
+            <thead className="table-light">
               <tr>
                 <th className="overline-title w-300px">Props Reference</th>
                 <th className="overline-title">Details</th>
@@ -523,7 +523,7 @@ const Avatar = () => {
           </CodeBlock>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

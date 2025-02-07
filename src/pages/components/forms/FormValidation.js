@@ -14,7 +14,7 @@ import {
 
 const FormValidation = () => {
   return (
-    <>
+    <React.Fragment>
       <Head title="Form Validation"></Head>
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -66,7 +66,7 @@ const FormValidation = () => {
           </PreviewCard>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 export default FormValidation;

@@ -6,7 +6,7 @@ import { PreviewCard, PreviewTable, CodeBlock } from "../../components/preview/P
 
 const SizingPage = ({ ...props }) => {
   return (
-    <>
+    <React.Fragment>
       <Head title="Sizing" />
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -39,7 +39,7 @@ const SizingPage = ({ ...props }) => {
             </div>
           </PreviewCard>
           <PreviewTable>
-            <thead className="bg-lighter">
+            <thead className="table-light">
               <tr>
                 <th className="overline-title w-200px">Percent Width</th>
                 <th className="overline-title">Value</th>
@@ -55,7 +55,7 @@ const SizingPage = ({ ...props }) => {
             </tbody>
           </PreviewTable>
           <PreviewTable>
-            <thead className="bg-lighter">
+            <thead className="table-light">
               <tr>
                 <th className="overline-title w-200px">Use-case Width</th>
                 <th className="overline-title">Value</th>
@@ -78,7 +78,7 @@ const SizingPage = ({ ...props }) => {
             </tbody>
           </PreviewTable>
           <PreviewTable>
-            <thead className="bg-lighter">
+            <thead className="table-light">
               <tr>
                 <th className="overline-title w-200px">Specific Width</th>
                 <th className="overline-title">Value</th>
@@ -113,7 +113,7 @@ const SizingPage = ({ ...props }) => {
             </tbody>
           </PreviewTable>
           <PreviewTable>
-            <thead className="bg-lighter">
+            <thead className="table-light">
               <tr>
                 <th className="overline-title w-200px">Full Width</th>
                 <th className="overline-title">Value</th>
@@ -185,7 +185,7 @@ const SizingPage = ({ ...props }) => {
             </div>
           </PreviewCard>
           <PreviewTable>
-            <thead className="bg-lighter">
+            <thead className="table-light">
               <tr>
                 <th className="overline-title w-200px">Percent Height</th>
                 <th className="overline-title">Value</th>
@@ -209,7 +209,7 @@ const SizingPage = ({ ...props }) => {
             </tbody>
           </PreviewTable>
           <PreviewTable>
-            <thead className="bg-lighter">
+            <thead className="table-light">
               <tr>
                 <th className="overline-title w-200px">Specific Height</th>
                 <th className="overline-title">Value</th>
@@ -253,7 +253,7 @@ const SizingPage = ({ ...props }) => {
             </BlockHeadContent>
           </BlockHead>
           <PreviewTable>
-            <thead className="bg-lighter">
+            <thead className="table-light">
               <tr>
                 <th className="overline-title w-200px">ClassName Reference</th>
                 <th className="overline-title">Details</th>
@@ -289,7 +289,7 @@ const SizingPage = ({ ...props }) => {
           <CodeBlock language="jsx">{`<div className="min-vw-25"></div>`}</CodeBlock>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

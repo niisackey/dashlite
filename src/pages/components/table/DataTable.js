@@ -15,7 +15,7 @@ import { DataTableData, dataTableColumns, dataTableColumns2, userData } from "./
 
 const DataTablePage = () => {
   return (
-    <>
+    <React.Fragment>
       <Head title="Basic Tables" />
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -90,7 +90,7 @@ const DataTablePage = () => {
           </PreviewCard>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 export default DataTablePage;

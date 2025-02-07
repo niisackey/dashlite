@@ -6,7 +6,7 @@ import { Block, BlockDes, BlockHead, BlockHeadContent, BlockTitle, PreviewCard }
 
 const Regularv1 = ({ ...props }) => {
   return (
-    <>
+    <React.Fragment>
       <Head title="Regular page v-1" />
       <Content>
         <BlockHead size="lg" wide="xs" className="mx-auto">
@@ -23,7 +23,7 @@ const Regularv1 = ({ ...props }) => {
           </BlockHeadContent>
         </BlockHead>
         <Block>
-          <PreviewCard bodyClass="card-inner-xl">
+          <PreviewCard bodyclassName="card-inner-xl">
             <article className="entry">
               <h3>Fuga eius ipsama dolores asperiores</h3>
               <p>
@@ -66,7 +66,7 @@ const Regularv1 = ({ ...props }) => {
           </PreviewCard>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

@@ -18,7 +18,7 @@ import { overviewKnob } from "./ChartData";
 
 const KnobPreview = () => {
   return (
-    <>
+    <React.Fragment>
       <Head title="Knobs" />
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -100,7 +100,7 @@ const KnobPreview = () => {
           </div>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

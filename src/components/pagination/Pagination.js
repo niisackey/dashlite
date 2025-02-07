@@ -42,69 +42,69 @@ const PaginationComponent = ({ itemPerPage, totalItems, paginate, currentPage })
   return (
     <Pagination aria-label="Page navigation example">
       <PaginationItem disabled={currentPage - 1 === 0 ? true : false}>
+        <PaginationLink
+          className="page-link-first"
+          onClick={(ev) => {
+            ev.preventDefault();
+            firstPage();
+          }}
+          href="#first"
+        >
+          <Icon name="chevrons-left" />
+        </PaginationLink>
+      </PaginationItem>
+      <PaginationItem disabled={currentPage - 1 === 0 ? true : false}>
+        <PaginationLink
+          className="page-link-prev"
+          onClick={(ev) => {
+            ev.preventDefault();
+            prevPage();
+          }}
+          href="#prev"
+        >
+          <Icon name="chevron-left" />
+        </PaginationLink>
+      </PaginationItem>
+      {paginationItms.map((item) => {
+        return (
+          <PaginationItem  disabled={isNaN(item)} className={`d-none d-sm-block ${currentPage === item ? "active" : ""}`} key={item}>
             <PaginationLink
-              className="page-link-first"
+                  tag="a"
+                  href="#pageitem"
               onClick={(ev) => {
                 ev.preventDefault();
-                firstPage();
+                    paginate(item);
               }}
-              href="#first"
             >
-              <Icon name="chevrons-left" />
+                  {item}
             </PaginationLink>
           </PaginationItem>
-          <PaginationItem disabled={currentPage - 1 === 0 ? true : false}>
-            <PaginationLink
-              className="page-link-prev"
-              onClick={(ev) => {
-                ev.preventDefault();
-                prevPage();
-              }}
-              href="#prev"
-            >
-              <Icon name="chevron-left" />
-            </PaginationLink>
-          </PaginationItem>
-          {paginationItms.map((item) => {
-            return (
-              <PaginationItem  disabled={isNaN(item)} className={`d-none d-sm-block ${currentPage === item ? "active" : ""}`} key={item}>
-                <PaginationLink
-                      tag="a"
-                      href="#pageitem"
-                  onClick={(ev) => {
-                    ev.preventDefault();
-                        paginate(item);
-                  }}
-                >
-                      {item}
-                </PaginationLink>
-              </PaginationItem>
-            );
-          })}
-          <PaginationItem disabled={pageNumbers[pageNumbers.length - 1] === currentPage}>
-            <PaginationLink
-              className="page-link-next"
-              onClick={(ev) => {
-                ev.preventDefault();
-                nextPage();
-              }}
-              href="#next"
-            >
-              <Icon name="chevron-right" />
-            </PaginationLink>
-          </PaginationItem>
-          <PaginationItem disabled={pageNumbers[pageNumbers.length - 1] === currentPage}>
-            <PaginationLink
-              className="page-link-next"
-              onClick={(ev) => {
-                ev.preventDefault();
-                lastPage();
-              }}
-              href="#last"
-            >
-              <Icon name="chevrons-right" />
-            </PaginationLink>
-          </PaginationItem>
+        );
+      })}
+      <PaginationItem disabled={pageNumbers[pageNumbers.length - 1] === currentPage}>
+        <PaginationLink
+          className="page-link-next"
+          onClick={(ev) => {
+            ev.preventDefault();
+            nextPage();
+          }}
+          href="#next"
+        >
+          <Icon name="chevron-right" />
+        </PaginationLink>
+      </PaginationItem>
+      <PaginationItem disabled={pageNumbers[pageNumbers.length - 1] === currentPage}>
+        <PaginationLink
+          className="page-link-next"
+          onClick={(ev) => {
+            ev.preventDefault();
+            lastPage();
+          }}
+          href="#last"
+        >
+          <Icon name="chevrons-right" />
+        </PaginationLink>
+      </PaginationItem>
     </Pagination>
   );
 };

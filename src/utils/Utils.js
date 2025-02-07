@@ -9,6 +9,11 @@ if (process.env.NODE_ENV === "development") {
   } else url = process.env.PUBLIC_URL; /// ADD YOUR CPANEL SUB-URL
 }
 
+// Logs out user
+export const handleSignout = () => {
+  localStorage.removeItem("accessToken");
+};
+
 //Function to validate and return errors for a form
 export const checkForm = (formData) => {
   let errorState = {};
@@ -73,12 +78,12 @@ export const setDeadlineDays = (deadline) => {
   return days;
 };
 
-//Date formatter function Example : 10-02-2004
+//Date formatter function
 export const dateFormatterAlt = (date, reverse) => {
   let d = date.getDate();
-  let m = date.getMonth();
+  let m = date.getMonth() + 1;
   let y = date.getFullYear();
-  reverse ? (date = m + "-" + d + "-" + y) : (date = y + "-" + d + "-" + m);
+  reverse ? (date = m + " - " + d + " - " + y) : (date = y + " - " + d + " - " + m);
   return date;
 };
 
@@ -149,3 +154,38 @@ export const monthNames = [
   "November",
   "December",
 ];
+
+export const addDays = (date, days) => {
+  var result = new Date(date);
+  result.setDate(result.getDate() + days);
+  return result;
+};
+
+// Returns Currency based value for invest panel
+export const returnCurrency = (currency, data, upperCase) => {
+  if (currency === "usd") {
+    return { value: data.usd.toFixed(2), label: upperCase ? "USD" : "$" };
+  } else if (currency === "eur") {
+    return { value: data.euro.toFixed(2), label: upperCase ? "EUR" : "euro" };
+  } else if (currency === "btc") {
+    return { value: data.BTC.toFixed(6), label: "BTC" };
+  } else {
+    return { value: data.ETH.toFixed(2), label: "ETH" };
+  }
+};
+
+// Returns levels
+export const returnLevel = (currency, data, upperCase) => {
+  if (currency === "usd") {
+    return data.usd;
+  } else if (currency === "eur") {
+    return data.euro;
+  } else if (currency === "btc") {
+    let amount = data.BTC.map((item) => {
+      return item.toFixed(6);
+    });
+    return amount;
+  } else {
+    return data.ETH;
+  }
+};

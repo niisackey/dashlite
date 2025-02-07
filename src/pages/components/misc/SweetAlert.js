@@ -180,7 +180,7 @@ const SweetAlertPage = () => {
     });
   };
   return (
-    <>
+    <React.Fragment>
       <Head title="Sweetalert"></Head>
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -356,7 +356,7 @@ const SweetAlertPage = () => {
           </CodeBlock>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Icon from "../icon/Icon";
 import { Pagination, PaginationLink, PaginationItem, Row, Col } from "reactstrap";
 
@@ -8,6 +8,7 @@ const DataTablePagination = ({
   paginate,
   currentPage,
   onChangeRowsPerPage,
+  customItemPerPage,
   setRowsPerPage,
 }) => {
   const pageNumbers = [];
@@ -45,6 +46,11 @@ const DataTablePagination = ({
   const prevPage = () => {
     paginate(currentPage - 1);
   };
+
+  useEffect(() => {
+    onChangeRowsPerPage(customItemPerPage);
+    setRowsPerPage(customItemPerPage);
+  }, [customItemPerPage]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <Row className="align-items-center">

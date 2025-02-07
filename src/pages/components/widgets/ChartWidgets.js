@@ -23,7 +23,7 @@ import { Card, Col, Row } from "reactstrap";
 
 const ChartWidgets = () => {
   return (
-    <>
+    <React.Fragment>
       <Head title="Card Widgets"></Head>
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -985,7 +985,7 @@ const SessionDevice = () => {
 };`}</CodeBlock>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

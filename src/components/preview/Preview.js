@@ -21,10 +21,10 @@ export const PreviewAltCard = ({ className, bodyClass, ...props }) => {
   );
 };
 
-export const PreviewTable = ({ ...props }) => {
+export const PreviewTable = ({ className,...props }) => {
   return (
-    <Card className="card-preview">
-      <table className="table preview-reference">{props.children}</table>
+    <Card className={`card-preview ${className ? className : ""}`}>
+      <table className={`table preview-reference ${props.size ? `table-${props.size}` : ""}`}>{props.children}</table>
     </Card>
   );
 };
@@ -40,7 +40,7 @@ export const CodeBlock = ({ language, ...props }) => {
       <OverlineTitle className="title">{props.title ? props.title : "Code Example"}</OverlineTitle>
       <CopyToClipboard text={copyText} onCopy={onCopyClick}>
         <Button color="blank" size="sm" className="clipboard-init">
-          {copyState ? "Copied" : "Copy"}
+        {copyState ? "Copied" : "Copy"}
         </Button>
       </CopyToClipboard>
       <SyntaxHighlighter language="javascript" className="bg-lighter h-max-150px m-0" style={a11yLight}>

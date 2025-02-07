@@ -50,7 +50,7 @@ const settings2 = {
 
 const SlickPage = () => {
   return (
-    <>
+    <React.Fragment>
       <Head title="Slick Slider"></Head>
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -115,7 +115,7 @@ const SlickPage = () => {
             
 <Slider {...settings}>
     {cardPreview.map((item) => (
-    <Col key={item.id} className="px-3">
+      <Col key={item.id} className="px-3">
         <Card className="card-bordered">
             <img src={item.img} className="card-img-top" alt="" />
             <div className="card-inner">
@@ -256,7 +256,7 @@ const SlickPage = () => {
           </CodeBlock>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

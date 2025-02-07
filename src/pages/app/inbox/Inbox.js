@@ -95,7 +95,7 @@ const Inbox = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <>
+    <React.Fragment>
       <Head title="Inbox"></Head>
       <Content>
         <div className="nk-ibx">
@@ -135,7 +135,7 @@ const Inbox = () => {
           />
         </div>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

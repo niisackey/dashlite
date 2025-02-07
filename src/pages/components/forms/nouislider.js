@@ -17,7 +17,7 @@ import { Row, Col } from "reactstrap";
 
 const NouiSlider = () => {
   return (
-    <>
+    <React.Fragment>
       <Head title="noUiSlider" />
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -313,7 +313,7 @@ const NouiSlider = () => {
           </PreviewCard>
 
           <PreviewTable>
-            <thead className="bg-lighter">
+            <thead className="table-light">
               <tr>
                 <th className="overline-title w-300px">Props Reference</th>
                 <th className="overline-title">Details</th>
@@ -359,7 +359,7 @@ const NouiSlider = () => {
           </PreviewTable>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

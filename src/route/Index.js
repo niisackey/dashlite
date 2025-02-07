@@ -3,10 +3,25 @@ import { Routes,Route, useLocation } from "react-router-dom";
 import { ProductContextProvider } from "../pages/pre-built/products/ProductContext";
 import { UserContextProvider } from "../pages/pre-built/user-manage/UserContext";
 
-import Homepage from "../pages/Homepage";
+import Sales from "../pages/Sales";
 import Crypto from "../pages/Crypto";
 import Analytics from "../pages/Analytics";
 import Invest from "../pages/Invest";
+
+import Overview from "../pages/panel/invest/Overview";
+import Plan from "../pages/panel/invest/Plan";
+import Investment from "../pages/panel/invest/Investment";
+import InvestmentProcess from "../pages/panel/invest/pages/InvesmentProcess";
+import InvestmentDetails from "../pages/panel/invest/pages/InvestmentDetails";
+import Welcome from "../pages/panel/invest/pages/Welcome";
+import KycApplications from "../pages/panel/invest/pages/KycApplications";
+import KycForms from "../pages/panel/invest/pages/KycForms";
+import ProfileLayout from "../pages/panel/invest/ProfileLayout";
+import Profile from "../pages/panel/invest/Profile";
+import ProfileSetting from "../pages/panel/invest/ProfileSetting";
+import ProfileNotify from "../pages/panel/invest/ProfileNotify";
+import ProfileConnected from "../pages/panel/invest/ProfileConnected";
+import ProfileActivity from "../pages/panel/invest/ProfileActivity";
 
 import Component from "../pages/components/Index";
 import Accordian from "../pages/components/Accordions";
@@ -22,7 +37,6 @@ import Dropdowns from "../pages/components/Dropdowns";
 import FormElements from "../pages/components/forms/FormElements";
 import FormLayouts from "../pages/components/forms/FormLayouts";
 import FormValidation from "../pages/components/forms/FormValidation";
-import DataTablePage from "../pages/components/table/DataTable";
 import Modals from "../pages/components/Modals";
 import Pagination from "../pages/components/Pagination";
 import Popovers from "../pages/components/Popovers";
@@ -32,13 +46,6 @@ import Tabs from "../pages/components/Tabs";
 import Toast from "../pages/components/Toast";
 import Tooltips from "../pages/components/Tooltips";
 import Typography from "../pages/components/Typography";
-import CheckboxRadio from "../pages/components/forms/CheckboxRadio";
-import AdvancedControls from "../pages/components/forms/AdvancedControls";
-import InputGroup from "../pages/components/forms/InputGroup";
-import FormUpload from "../pages/components/forms/FormUpload";
-import NumberSpinner from "../pages/components/forms/NumberSpinner";
-import NouiSlider from "../pages/components/forms/nouislider";
-import WizardForm from "../pages/components/forms/WizardForm";
 import UtilBorder from "../pages/components/UtilBorder";
 import UtilColors from "../pages/components/UtilColors";
 import UtilDisplay from "../pages/components/UtilDisplay";
@@ -56,7 +63,9 @@ import Regularv2 from "../pages/others/Regular-2";
 import Terms from "../pages/others/Terms";
 import BasicTable from "../pages/components/table/BasicTable";
 import SpecialTablePage from "../pages/components/table/SpecialTable";
+import DataTablePage from "../pages/components/table/DataTable";
 import ChartPage from "../pages/components/charts/Charts";
+import KnobPreview from "../pages/components/charts/KnobPreview";
 import EmailTemplate from "../pages/components/email-template/Email";
 import NioIconPage from "../pages/components/crafted-icons/NioIcon";
 import SVGIconPage from "../pages/components/crafted-icons/SvgIcons";
@@ -83,32 +92,39 @@ import InvoiceDetails from "../pages/pre-built/invoice/InvoiceDetails";
 import InvoicePrint from "../pages/pre-built/invoice/InvoicePrint";
 import PricingTable from "../pages/pre-built/pricing-table/PricingTable";
 import GalleryPreview from "../pages/pre-built/gallery/GalleryCardPreview";
-import ReactToastify from "../pages/components/misc/ReactToastify";
 
 import AppMessages from "../pages/app/messages/Messages";
 import Chat from "../pages/app/chat/ChatContainer";
 import Calender from "../pages/app/calender/Calender";
+import Kanban from "../pages/app/kanban/Kanban";
+import Inbox from "../pages/app/inbox/Inbox";
+import DateTimePicker from "../pages/components/forms/DateTimePicker";
+import AdvancedControls from "../pages/components/forms/AdvancedControls";
+import CheckboxRadio from "../pages/components/forms/CheckboxRadio";
+import InputGroup from "../pages/components/forms/InputGroup";
+import FormUpload from "../pages/components/forms/FormUpload";
+import NumberSpinner from "../pages/components/forms/NumberSpinner";
+import NouiSlider from "../pages/components/forms/nouislider";
+import WizardForm from "../pages/components/forms/WizardForm";
+import QuillPreview from "../pages/components/forms/rich-editor/QuillPreview";
+import TinymcePreview from "../pages/components/forms/rich-editor/TinymcePreview";
+
 import FileManager from "../pages/app/file-manager/FileManager";
 import FileManagerFiles from "../pages/app/file-manager/FileManagerFiles";
 import FileManagerShared from "../pages/app/file-manager/FileManagerShared";
 import FileManagerStarred from "../pages/app/file-manager/FileManagerStarred";
 import FileManagerRecovery from "../pages/app/file-manager/FileManagerRecovery";
 import FileManagerSettings from "../pages/app/file-manager/FileManagerSettings";
-import Inbox from "../pages/app/inbox/Inbox";
-import Kanban from "../pages/app/kanban/Kanban";
-import DateTimePicker from "../pages/components/forms/DateTimePicker";
 import CardWidgets from "../pages/components/widgets/CardWidgets";
 import ChartWidgets from "../pages/components/widgets/ChartWidgets";
 import RatingWidgets from "../pages/components/widgets/RatingWidgets";
 import SlickPage from "../pages/components/misc/Slick";
+import JsTreePreview from "../pages/components/misc/JsTree";
+import ReactToastify from "../pages/components/misc/ReactToastify";
 import SweetAlertPage from "../pages/components/misc/SweetAlert";
 import BeautifulDnd from "../pages/components/misc/BeautifulDnd";
 import DualListPage from "../pages/components/misc/DualListbox";
 import GoogleMapPage from "../pages/components/misc/GoogleMap";
-import JsTreePreview from "../pages/components/misc/JsTree";
-import QuillPreview from "../pages/components/forms/rich-editor/QuillPreview";
-import TinymcePreview from "../pages/components/forms/rich-editor/TinymcePreview";
-import KnobPreview from "../pages/components/charts/KnobPreview";
 
 import Error404Classic from "../pages/error/404-classic";
 import Error404Modern from "../pages/error/404-modern";
@@ -129,19 +145,40 @@ const Router = () => {
     window.scrollTo(0, 0);
   }, [location]);
 
+
   return (
       <Routes>
+        
         <Route path={`${process.env.PUBLIC_URL}`} element={<Layout />}>
-          <Route index element={<Homepage />}></Route>
+          <Route index element={<Invest />}></Route>
           <Route path="crypto" element={<Crypto />}></Route>
           <Route path="analytics" element={<Analytics />}></Route>
-          <Route path="invest" element={<Invest />}></Route>
+          <Route path="sales" element={<Sales />}></Route>
           <Route path="_blank" element={<Blank />}></Route>
 
           <Route path="project-card" element={<ProjectCardPage />}></Route>
           <Route path="project-list" element={<ProjectListPage />}></Route>
 
           
+          <Route path="invest" >
+            <Route index element={<Overview />}></Route>
+            <Route path="index" element={<Overview />}></Route>
+            <Route path="schemes" element={<Plan />}></Route>
+            <Route element={<ProfileLayout />} >
+              <Route path="profile" element={<Profile />}></Route>
+              <Route path="profile-notify" element={<ProfileNotify />}></Route>
+              <Route path="profile-setting" element={<ProfileSetting />}></Route>
+              <Route path="profile-connected" element={<ProfileConnected />}></Route>
+            </Route>
+            <Route path="profile-activity" element={<ProfileActivity />}></Route>
+            <Route path="invest" element={<Investment />}></Route>
+            <Route path="invest-form/:investId" element={<InvestmentProcess />}></Route>
+            <Route path="scheme-details/:schemeId" element={<InvestmentDetails />}></Route>
+            <Route path="welcome" element={<Welcome />}></Route>
+            <Route path="kyc-application" element={<KycApplications />}></Route>
+            <Route path="kyc-form" element={<KycForms />}></Route>
+          </Route>
+
           <Route element={<UserContextProvider />} >
             <Route path="user-list-regular" element={<UserListRegular />}></Route>
             <Route path="user-list-compact" element={<UserListCompact />}></Route>
@@ -282,6 +319,8 @@ const Router = () => {
             
             <Route path="invoice-print/:invoiceId" element={<InvoicePrint />}></Route>
         </Route>
+
+
       </Routes>
   );
 };

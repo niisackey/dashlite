@@ -23,7 +23,7 @@ import { Link } from "react-router-dom";
 
 const CardsPage = ({ ...props }) => {
   return (
-    <>
+    <React.Fragment>
       <Head title="Cards" />
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -210,7 +210,7 @@ const CardsPage = ({ ...props }) => {
               <BlockTitle tag="h4">Card Styles</BlockTitle>
               <p>Cards include various options for customizing their backgrounds, borders, and color.</p>
               <p>
-                Use <Link to={process.env.PUBLIC_URL + '/components/util-colors'}>colors utilities</Link>  to change the appearance of a card.
+                Use <Link to={process.env.PUBLIC_URL + '/components/util-colors'}>colors utilities</Link> to change the appearance of a card.
               </p>
             </BlockHeadContent>
           </BlockHead>
@@ -239,7 +239,7 @@ const CardsPage = ({ ...props }) => {
                 </Card>
               </Col>
               <Col sm="6">
-                <Card className="card-bordered" inverse color="gray">
+               <Card className="card-bordered" inverse color="gray">
                   <CardHeader>Header</CardHeader>
                   <CardBody className="card-inner">
                     <CardTitle tag="h5">Dark card title</CardTitle>
@@ -276,7 +276,7 @@ const CardsPage = ({ ...props }) => {
           </CodeBlock>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

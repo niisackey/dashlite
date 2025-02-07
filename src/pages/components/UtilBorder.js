@@ -6,7 +6,7 @@ import { PreviewCard, PreviewTable, CodeBlock } from "../../components/preview/P
 
 const BorderPage = ({ ...props }) => {
   return (
-    <>
+    <React.Fragment>
       <Head title="Border Utility" />
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -40,7 +40,7 @@ const BorderPage = ({ ...props }) => {
             </div>
           </PreviewCard>
           <PreviewTable>
-            <thead className="bg-lighter">
+            <thead className="table-light">
               <tr>
                 <th className="overline-title w-35">ClassName Reference</th>
                 <th className="overline-title">Details</th>
@@ -81,7 +81,7 @@ const BorderPage = ({ ...props }) => {
             </div>
           </PreviewCard>
           <PreviewTable>
-            <thead className="bg-lighter">
+            <thead className="table-light">
               <tr>
                 <th className="overline-title w-35">ClassName Reference</th>
                 <th className="overline-title">Details</th>
@@ -127,7 +127,7 @@ const BorderPage = ({ ...props }) => {
             </div>
           </PreviewCard>
           <PreviewTable>
-            <thead className="bg-lighter">
+            <thead className="table-light">
               <tr>
                 <th className="overline-title w-35">ClassName Reference</th>
                 <th className="overline-title ">Value</th>
@@ -165,7 +165,7 @@ const BorderPage = ({ ...props }) => {
             </div>
           </PreviewCard>
           <PreviewTable>
-            <thead className="bg-lighter">
+            <thead className="table-light">
               <tr>
                 <th className="overline-title w-35">ClassName Reference</th>
                 <th className="overline-title">Details</th>
@@ -213,7 +213,7 @@ const BorderPage = ({ ...props }) => {
           <CodeBlock language="jsx">{`<div className="rounded-left"></div>`}</CodeBlock>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

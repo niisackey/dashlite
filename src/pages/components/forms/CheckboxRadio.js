@@ -15,7 +15,7 @@ import { Input, Row, Col } from "reactstrap";
 
 const CheckboxRadio = () => {
   return (
-    <>
+    <React.Fragment>
       <Head title="Checkbox Radio" />
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -390,7 +390,7 @@ const CheckboxRadio = () => {
 </div>`}</CodeBlock>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

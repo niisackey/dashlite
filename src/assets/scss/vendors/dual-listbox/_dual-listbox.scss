@@ -296,15 +296,3 @@
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
-
-.rdl-controls {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-}
-@media (min-width: 576px) {
-  .rdl-controls {
-      flex-direction: row;
-  }
-}

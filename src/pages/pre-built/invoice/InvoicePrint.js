@@ -6,14 +6,14 @@ import { Button, Icon, Block } from "../../../components/Component";
 import { invoiceData } from "./Invoice";
 import { useParams } from "react-router-dom";
 
-const InvoicePrint = ({ match }) => {
+const InvoicePrint = () => {
   const [data] = useState(invoiceData);
   const [user, setUser] = useState();
 
   let { invoiceId } = useParams();
 
   useEffect(() => {
-    setTimeout(() => window.print(), 1500);
+    setTimeout(() => window.print(), 500);
   }, []);
 
   useEffect(() => {

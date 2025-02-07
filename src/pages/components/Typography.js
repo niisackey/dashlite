@@ -17,7 +17,7 @@ import { Row, Col } from "reactstrap";
 
 const Typography = () => {
   return (
-    <>
+    <React.Fragment>
       <Head title="Typography"></Head>
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -48,8 +48,8 @@ const Typography = () => {
             </BlockHeadContent>
           </BlockHead>
 
-          <PreviewTable>
-            <thead className="bg-lighter">
+          <PreviewTable className="card-bordered" size="lg">
+            <thead className="table-light">
               <tr>
                 <th className="overline-title w-250px">Heading</th>
                 <th className="overline-title">Example</th>
@@ -107,7 +107,7 @@ const Typography = () => {
             </tbody>
           </PreviewTable>
           <PreviewTable>
-            <thead className="bg-lighter">
+            <thead className="table-light">
               <tr>
                 <th className="overline-title w-250px">ClassName Reference</th>
                 <th className="overline-title ">Note</th>
@@ -163,7 +163,7 @@ const Typography = () => {
           </BlockHead>
 
           <PreviewTable>
-            <thead className="bg-lighter">
+            <thead className="table-light">
               <tr>
                 <th className="overline-title w-250px">Code Reference</th>
                 <th className="overline-title">Preview</th>
@@ -522,7 +522,7 @@ const Typography = () => {
           </CodeBlock>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

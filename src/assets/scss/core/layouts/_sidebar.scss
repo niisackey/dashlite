@@ -43,7 +43,7 @@
             bottom: 0;
             left: 0;
             background: $sidebar-overlay;
-            z-index: 1020;
+            z-index: 900;
             animation: overlay-fade-in .4s ease 1;
         }
         &-element{

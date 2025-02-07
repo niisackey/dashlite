@@ -58,6 +58,11 @@ export const AudienceLineChart = ({ state }) => {
               bodySpacing: 4,
               padding: 10,
               footerMarginTop: 0,
+              callbacks: {
+                label: function (context) {
+                    return context.parsed.y;
+                },
+              },
           },
         },
         maintainAspectRatio: false,
@@ -78,7 +83,7 @@ export const AudienceLineChart = ({ state }) => {
                 tickMarkLength: 0,
                 zeroLineColor: "rgba(82, 100, 132,0.2)",
               },
-          },
+            },
           x:{
               display: false,
               ticks: {
@@ -95,7 +100,7 @@ export const AudienceLineChart = ({ state }) => {
                 zeroLineColor: "transparent",
                 offsetGridLines: true,
               },
-          },
+            },
         },
       }}
     ></Line>
@@ -153,7 +158,7 @@ export const ActiveUserBarChart = () => {
                 tickMarkLength: 0,
                 zeroLineColor: "rgba(82, 100, 132, 0.2)",
               },
-          },
+            },
           x:{
               display: false,
               ticks: {
@@ -170,7 +175,7 @@ export const ActiveUserBarChart = () => {
                 zeroLineColor: "transparent",
                 offsetGridLines: true,
               },
-          },
+            },
         },
       }}
     ></Bar>
@@ -204,9 +209,6 @@ export const WPCharts = ({ data, className }) => {
               padding: 6,
               footerMarginTop: 0,
               callbacks: {
-                title: function () {
-                  return false; 
-                },
                 label: function (context) {
                     return context.parsed.y;
                 },
@@ -215,24 +217,40 @@ export const WPCharts = ({ data, className }) => {
         },
         maintainAspectRatio: false,
         scales: {
-          y:{
+          y: {
               display: false,
               ticks: {
                 beginAtZero: false,
+                color:"#9eaecf", 
+                font: {
+                  size: '12px',
+                },
                 padding: 0,
                 stepSize: 300,
               },
-          },
-          x:{
+              grid: {
+                color: "rgba(82, 100, 132, 0.2)",
+                tickMarkLength: 0,
+                zeroLineColor: "rgba(82, 100, 132, 0.2)",
+              },
+            },
+          x: {
               display: false,
               ticks: {
+                color:"#9eaecf", 
+                font: {
+                  size: '12px',
+                },
                 source: "auto",
                 padding: 0,
               },
               grid: {
+                color: "transparent",
+                tickMarkLength: 0,
+                zeroLineColor: "rgba(82, 100, 132,0.2)",
                 offsetGridLines: true,
               },
-          },
+            },
         },
       }}
     ></Line>

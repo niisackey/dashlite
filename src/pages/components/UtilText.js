@@ -6,7 +6,7 @@ import { PreviewTable, CodeBlock } from "../../components/preview/Preview";
 
 const TextPage = ({ ...props }) => {
   return (
-    <>
+    <React.Fragment>
       <Head title="Text Utility" />
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -34,7 +34,7 @@ const TextPage = ({ ...props }) => {
             </BlockHeadContent>
           </BlockHead>
           <PreviewTable>
-            <thead className="bg-lighter">
+            <thead className="table-light">
               <tr>
                 <th className="overline-title w-300px">ClassName Reference</th>
                 <th className="overline-title">Value</th>
@@ -79,7 +79,7 @@ const TextPage = ({ ...props }) => {
             </BlockHeadContent>
           </BlockHead>
           <PreviewTable>
-            <thead className="bg-lighter">
+            <thead className="table-light">
               <tr>
                 <th className="overline-title w-300px">ClassName Reference</th>
                 <th className="overline-title">Note</th>
@@ -117,7 +117,7 @@ const TextPage = ({ ...props }) => {
             </BlockHeadContent>
           </BlockHead>
           <PreviewTable>
-            <thead className="bg-lighter">
+            <thead className="table-light">
               <tr>
                 <th className="overline-title w-300px">ClassName Reference</th>
                 <th className="overline-title">Value</th>
@@ -143,7 +143,7 @@ const TextPage = ({ ...props }) => {
             </BlockHeadContent>
           </BlockHead>
           <PreviewTable>
-            <thead className="bg-lighter">
+            <thead className="table-light">
               <tr>
                 <th className="overline-title w-300px">ClassName Reference</th>
                 <th className="overline-title">Preview</th>
@@ -227,7 +227,7 @@ const TextPage = ({ ...props }) => {
             </BlockHeadContent>
           </BlockHead>
           <PreviewTable>
-            <thead className="bg-lighter">
+            <thead className="table-light">
               <tr>
                 <th className="overline-title w-300px">ClassName Reference</th>
                 <th className="overline-title">Note</th>
@@ -308,7 +308,7 @@ const TextPage = ({ ...props }) => {
           <CodeBlock language="jsx">{`<span className="text-break">`}</CodeBlock>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

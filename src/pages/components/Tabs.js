@@ -25,7 +25,7 @@ const TabsPage = ({ ...props }) => {
     if (activeAltTab !== alttab) setActiveAltTab(alttab);
   };
   return (
-    <>
+    <React.Fragment>
       <Head title="Tabs" />
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -1191,7 +1191,7 @@ const TabsPage = ({ ...props }) => {
           </CodeBlock>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

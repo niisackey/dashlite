@@ -29,7 +29,7 @@ const JsTreePreview = () => {
   });
 
   return (
-    <>
+    <React.Fragment>
       <Head title="jsTree"></Head>
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -70,43 +70,43 @@ const JsTreePreview = () => {
           </PreviewCard>
           <CodeBlock language="jsx">
             {` // Json Object that needs to be passed
-              core: {
-                data: [
-                  {
-                    text: "Root node 1",
-                    state: {
-                      opened: true,
-                    },
-                    children: [
-                      { text: "Child node 1" },
-                      {
-                        text: "Initially selected",
-                        state: {
-                          selected: true,
-                        },
-                      },
-                      {
-                        text: "Initially Open",
-                        state: {
-                          opened: true,
-                        },
-                        children: [
-                          {
-                            text: "Disabled Node",
-                            state: {
-                              disabled: true,
-                            },
-                          },
-                          { text: "Another Node" },
-                        ],
-                      },
-                    ],
-                  },
-                  {
-                    text: "Root node 2",
-                  },
-                ],
+  core: {
+    data: [
+      {
+        text: "Root node 1",
+        state: {
+          opened: true,
+        },
+        children: [
+          { text: "Child node 1" },
+          {
+            text: "Initially selected",
+            state: {
+              selected: true,
+            },
+          },
+          {
+            text: "Initially Open",
+            state: {
+              opened: true,
+            },
+            children: [
+              {
+                text: "Disabled Node",
+                state: {
+                  disabled: true,
+                },
               },
+              { text: "Another Node" },
+            ],
+          },
+        ],
+      },
+      {
+        text: "Root node 2",
+      },
+    ],
+  },
 
 
 <TreeView treeData={state.data} treeSearchData={state.data}></TreeView>`}
@@ -302,7 +302,7 @@ const JsTreePreview = () => {
           </CodeBlock>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

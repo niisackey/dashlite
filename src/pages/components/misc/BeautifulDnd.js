@@ -18,7 +18,7 @@ import DragHandleDnd from "../../../components/partials/dnd/HandleDnd";
 
 const BeautifulDnd = () => {
   return (
-    <>
+    <React.Fragment>
       <Head title="React Beautiful Dnd"></Head>
       <Content page="component">
         <BlockHead size="lg" wide="sm">
@@ -351,7 +351,7 @@ const DragHandleDnd = () => {
           </CodeBlock>
         </Block>
       </Content>
-    </>
+    </React.Fragment>
   );
 };
 

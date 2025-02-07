@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Head from "../../../layout/head/Head";
 import MessageItem from "./MessageItem";
-import ContentAlt from "../../../layout/content/ContentAlt";
+import Content from "../../../layout/content/Content";
 import Simplebar from "simplebar-react";
 import { Button, Icon, UserAvatar } from "../../../components/Component";
 import { messageData } from "./MessageData";
@@ -81,9 +81,9 @@ const AppMessages = () => {
   };
 
   return (
-    <>
+    <React.Fragment>
       <Head title="App Messages"></Head>
-      <ContentAlt>
+      <Content>
         <div className="nk-msg">
           <div className="nk-msg-aside hide-aside">
             <div className="nk-msg-nav">
@@ -228,8 +228,8 @@ const AppMessages = () => {
             data={data}
           />
         </div>
-      </ContentAlt>
-    </>
+      </Content>
+    </React.Fragment>
   );
 };
 export default AppMessages;
