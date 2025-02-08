@@ -114,3 +114,4 @@ the .htaccess file is included in the server.
     is the same as in step one.
 
 4.  Restart the application and visit the created route.
+"# dashlite" 
